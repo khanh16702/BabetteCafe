@@ -1,0 +1,209 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Nhom7_N03_TrangWebQuanCafe
+build_property.RootNamespace = Nhom7_N03_TrangWebQuanCafe
+build_property.ProjectDir = D:\visual studio - code\.NET MVC\BTL\Nhom7_N03_TrangWebQuanCafe\Nhom7_N03_TrangWebQuanCafe\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\visual studio - code\.NET MVC\BTL\Nhom7_N03_TrangWebQuanCafe\Nhom7_N03_TrangWebQuanCafe
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Account/AddOrUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxBZGRPclVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Banner/AddOrUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmFubmVyXEFkZE9yVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Banner/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmFubmVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Category/AddOrUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcQWRkT3JVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Customer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/DiscountCode/AddOrUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGlzY291bnRDb2RlXEFkZE9yVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/DiscountCode/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGlzY291bnRDb2RlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Gallery/AddOrUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2FsbGVyeVxBZGRPclVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Gallery/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2FsbGVyeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/NewsCategory/AddOrUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3c0NhdGVnb3J5XEFkZE9yVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/NewsCategory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3c0NhdGVnb3J5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/NewsTag/AddOrUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3c1RhZ1xBZGRPclVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/NewsTag/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3c1RhZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/News/AddOrUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3c1xBZGRPclVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/News/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Product/AddOrUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxBZGRPclVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Role/AddOrUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZVxBZGRPclVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Role/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Shared/_PartialFooter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9QYXJ0aWFsRm9vdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Shared/_PartialHeader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9QYXJ0aWFsSGVhZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Staff/AddOrUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3RhZmZcQWRkT3JVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Staff/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3RhZmZcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/About/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Checkout/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Contact/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Gallery/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2FsbGVyeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Login/Forbidden.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cRm9yYmlkZGVuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/News/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/News/NewsDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xOZXdzRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Register/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Reservation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzZXJ2YXRpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Shared/_PartialFooter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsRm9vdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Shared/_PartialHeader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsSGVhZGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Shop/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-jmtr9jx2c2

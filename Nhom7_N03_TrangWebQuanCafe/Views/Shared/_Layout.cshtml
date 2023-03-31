@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="description" content="Babette">
+  <link href="~/assets/images/favicon/favicon.png" rel="icon">
+  <title>Babette</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Rubik:400,500,700%7cShadows+Into+Light&display=swap">
+  <link rel="stylesheet" href="~/assets/css/libraries.css" />
+  <!-- <link rel="stylesheet" href="~/assets/css/animate.css" /> -->
+  <link rel="stylesheet" href="~/assets/css/style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+
+    @await Html.PartialAsync("_PartialHeader")
+
+    @RenderBody()
+
+    @await Html.PartialAsync("_PartialFooter")
+
+    <div class="search-popup">
+      <i class="fa fa-times close-search"></i>
+      <form class="module__search-form">
+        <input type="text" class="search__input" placeholder="Type Words Then Enter">
+        <button class="module__search-btn"><i class="fa fa-search"></i></button>
+      </form>
+    </div><!-- /.search-popup -->
+
+  </div>
+  <!-- /.wrapper -->
+
+  <script src="~/assets/js/jquery-3.3.1.min.js"></script>
+  <script src="~/assets/js/plugins.js"></script>
+  <!-- <script src="~/assets/js/wow.min.js"></script> -->
+  <script src="~/assets/js/main.js"></script>
+  <script src="~/ckeditor5-build-classic/ckeditor.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

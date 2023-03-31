@@ -1,0 +1,169 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Products";
+    string error = TempData["error"] as string;
+}
+
+@model Nhom7_N03_TrangWebQuanCafe.Models.ProductView
+
+<h2 class="py-5">Update Products</h2>
+@if (!string.IsNullOrEmpty(error))
+{
+    <p class="text-danger">@error</p>
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <form action="/admin/product/addorupdate?page=@ViewBag.page" method="post">
+            <input type="hidden" name="productid" class="form-control" value="@Model.ProductId">
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" name="name" class="form-control" id="productname" value="@Model.Name" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="exampleInputFile" class="col-sm-2 col-form-label">Categories</label>
+                <div class="col-sm-10">
+                    <select class="form-select col-sm-10" multiple aria-label="multiple select example" id="select-categories" name="categoriesIdList" style="width:100%">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Price</label>
+                <div class="col-sm-10">
+                    <input type="number" name="price" class="form-control" id="productname" value="@Model.Price" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Quantity</label>
+                <div class="col-sm-10">
+                    <input type="number" name="quantity" class="form-control" id="productname" value="@Model.Quantity" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Created Date</label>
+                <div class="col-sm-10">
+                    <input type="datetime" name="createddate" class="form-control" id="productname" value="@Model.CreatedDate" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Created By</label>
+                <div class="col-sm-10">
+                    <input type="text" name="createdby" class="form-control" id="productname" value="@Model.CreatedBy" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Summary</label>
+                <div class="col-sm-10">
+                    <input type="text" name="summary" class="form-control" id="productname" value="@Model.Summary" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productsummary" class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-10">
+                    <textarea name="description" id="product-editor">@Model.Description</textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="image" id="product-avatar" value="@Model.Image" hidden />
+                <label class="control-label" for="exampleInputPassword1">Upload an image</label>
+                <div class="col-md-12 text-center">
+                    @if (Model.ProductId == 0) {
+                        <img src=@Url.Content("~/assets/img/default.jpg") id="image-upload" class="rounded mx-auto d-block" style="width: 256px" />
+                    }
+                    else {
+                        <img src=@Url.Content(Model.Image) id="image-upload" class="rounded mx-auto d-block" style="width: 256px" />
+                    }
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="file" name="fileUpload" id="exampleInputFile">
+                <i class="help-block">Upload an image</i>
+            </div>
+
+            <div class="form-group row" style="display:flex">
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning" href="/admin/product/index?page=@ViewBag.page">Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        $(document).on('change', 'input[name="fileUpload"]', function () {
+            let files = $(this).prop("files");
+            let formData = new FormData();
+            formData.append("file", files[0]);
+            console.log(formData)
+            $.ajax({
+                url: "/admin/product/uploadfile",
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                beforeSend: () => {
+
+                },
+                success: res => {
+                    if (res.status == 'success') {
+                        $('#image-upload').attr('src', res.filePath);
+                        $('#product-avatar').val(res.filePath);
+                    }
+                    else if (res.status == "error1") {
+                        console.log("Lỗi");
+                    }
+                },
+                error: error => {
+                    console.log(error);
+                }
+            })
+        });
+
+        $.ajax({
+            url:"/admin/product/GetAllCategories",
+            type: "GET",
+            dataType: "json",
+            beforeSend: function() {
+
+            },
+            success: function(data) {
+                $('#select-categories').html('');
+                let modelCate = "@Model.Categories";
+                console.log(modelCate);
+                let attribute = "";
+                data.forEach(function(item, index) {
+                    let itemName = item.name;
+                    if (modelCate.toString().includes(item.name)) {
+                        attribute = "selected"
+                    }
+                    else {
+                        attribute = "";
+                    }
+                    let row = `<option ${attribute} value="${item.productCategoryId}">${item.name}</option>`;
+                    $('#select-categories').append(row);
+                });
+            },
+            error: function(error) {
+
+            },
+            complete: function() {
+
+            }
+        });
+
+        ClassicEditor
+            .create(document.querySelector('#product-editor'))
+            .catch(error => {
+                console.error(error);
+            });
+
+    </script>
+}

@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Categories";
+    string error = TempData["error"] as string;
+}
+
+@model Nhom7_N03_TrangWebQuanCafe.Models.NewsTag
+
+<h2 class="py-5">Update News Categories</h2>
+@if (!string.IsNullOrEmpty(error))
+{
+    <p class="text-danger">@error</p>
+}
+
+<div class="row">
+    @if (Model.NewsTagId == 0)
+    {
+        <div class="col-md-8">
+            <form action="/admin/newstag/addorupdate?page=@ViewBag.page" method="post">
+                <input type="hidden" name="newstagid" class="form-control" value="0">
+                <div class="form-group row">
+                    <label for="productname" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="name" class="form-control" id="productname" required>
+                    </div>
+                </div>
+                <div class="form-group row" style="display:flex">
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <a class="btn btn-warning" href="/admin/newstag/index?page=@ViewBag.page">Back</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-8">
+            <form action="/admin/newstag/addorupdate?page=@ViewBag.page" method="post">
+                <div class="form-group row">
+                    <label for="productname" class="col-sm-2 col-form-label">ID</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="newstagid" class="form-control" id="productname"
+                           value="@Model.NewsTagId" readonly />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="productname" class="col-sm-2 col-form-label">Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="name" class="form-control" id="productname" value="@Model.Name" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="productname" class="col-sm-2 col-form-label">Created Date</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="createddate" class="form-control" id="productname"
+                           value="@Model.CreatedDate" readonly />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="productname" class="col-sm-2 col-form-label">Created By</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="createdby" class="form-control" id="productname"
+                           value="@Model.CreatedBy" readonly />
+                    </div>
+                </div>
+                <div class="form-group row" style="display:flex">
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <a class="btn btn-warning" href="/admin/newstag/index?page=@ViewBag.page">Back</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    }
+</div>

@@ -1,0 +1,66 @@
+﻿<!-- =========================
+        Header
+    =========================== -->
+
+@{
+    var backgroundColor = "";
+    if (ViewBag.backgroundColor != null) {
+        backgroundColor = "black";
+    }
+}
+<header id="header" class="header header-transparent header-layout1">
+    <nav class="navbar navbar-expand-lg sticky-navbar" style="background-color:@backgroundColor">
+        <div class="container">
+            <a class="navbar-brand" href="/home/index">
+                <img src="~/assets/images/logo/logo-light.png" class="logo-light" alt="logo">
+                <img src="~/assets/images/logo/logo-dark.png" class="logo-dark" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button">
+                <span class="menu-lines"><span></span></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNavigation">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav__item">
+                        <a href="/home/index" class="dropdown-toggle nav__item-link active">Home</a>
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item">
+                        <a href="/about/index" class="dropdown-toggle nav__item-link">About</a>
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item with-dropdown">
+                        <a href="/gallery/index" class="dropdown-toggle nav__item-link">Gallery</a>
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item with-dropdown">
+                        <a href="/news/index" class="dropdown-toggle nav__item-link">News</a>
+                    </li><!-- /.nav-item -->
+                    <li class="nav__item">
+                        <a href="/shop/index" class="dropdown-toggle nav__item-link">Shop</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/contact/index" class="dropdown-toggle nav__item-link">Contact us</a>
+                    </li>
+                </ul><!-- /.navbar-nav -->
+            </div><!-- /.navbar-collapse -->
+            <div class="navbar-actions-wrap">
+                <div class="navbar-actions align-items-center">
+                    <a href="#" class="navbar__action-btn search-popup-trigger"><i class="fa fa-search"></i></a>
+                    <a href="/reservation/index"
+                       class="navbar__action-btn navbar__action-btn-reserve btn btn__primary">Reservation</a>
+                    <a href="/cart/index" class="navbar__action-btn">
+                        <i class="icon-cart"></i>
+                        <span class="cart__label">@ViewBag.CartCount</span>
+                    </a>
+                    @if (ViewBag.CurrentUsername == "") {
+                        <a href="/login/index" class="navbar__action-btn">
+                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                        </a>
+                    }
+                    else {
+                        <a href="/account/index" class="navbar__action-btn">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </a>
+                    }
+                </div><!-- /.navbar-actions -->
+            </div><!-- /.navbar-actions-wrap -->
+        </div><!-- /.container -->
+    </nav><!-- /.navabr -->
+</header><!-- /.Header -->

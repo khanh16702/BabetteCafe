@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Discount Codes";
+    string error = TempData["error"] as string;
+}
+
+@model Nhom7_N03_TrangWebQuanCafe.Models.DiscountCode
+
+<h2 class="py-5">Update Discount Codes</h2>
+@if (!string.IsNullOrEmpty(error))
+{
+    <p class="text-danger">@error</p>
+}
+<div class="row">
+    <div class="col-md-8">
+        <form action="/admin/discountcode/addorupdate?page=@ViewBag.page" method="post">
+            <input type="hidden" name="discountcodeid" class="form-control" value="@Model.DiscountCodeId">
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" name="name" class="form-control" id="productname" value="@Model.Name" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Decrease Amount</label>
+                <div class="col-sm-10">
+                    <input type="text" name="DecreaseAmount" class="form-control" id="productname" value="@Model.DecreaseAmount" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Minimum Cart Value To Apply</label>
+                <div class="col-sm-10">
+                    <input type="text" name="MinimumToApply" class="form-control" id="productname" value="@Model.MinimumToApply" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Active Date</label>
+                <div class="col-sm-10">
+                    <input type="datetime-local" name="activedate" class="form-control" id="productname" value="@Model.ActiveDate" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Expire Date</label>
+                <div class="col-sm-10">
+                    <input type="datetime-local" name="expiredate" class="form-control" id="productname" value="@Model.ExpireDate" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Created By</label>
+                <div class="col-sm-10">
+                    <input type="text" name="createdby" class="form-control" id="productname" value="@Model.CreatedBy" readonly>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Created Date</label>
+                <div class="col-sm-10">
+                    <input type="text" name="createddate" class="form-control" id="productname" value="@Model.CreatedDate" readonly>
+                </div>
+            </div>
+            <div class="form-group row" style="display:flex">
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning" href="/admin/discountcode/index?page=@ViewBag.page">Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

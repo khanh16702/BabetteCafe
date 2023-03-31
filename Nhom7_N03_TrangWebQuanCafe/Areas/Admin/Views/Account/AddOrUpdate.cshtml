@@ -1,0 +1,163 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Accounts";
+    string error = TempData["error"] as string;
+}
+
+@model Nhom7_N03_TrangWebQuanCafe.Models.AccountView
+
+<h2 class="py-5">Update Accounts</h2>
+@if (!string.IsNullOrEmpty(error))
+{
+    <p class="text-danger">@error</p>
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <form action="/admin/account/addorupdate?page=@ViewBag.page" method="post">
+            <input type="hidden" name="accountid" class="form-control" value="@Model.AccountId">
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-10">
+                    <input type="text" name="username" class="form-control" id="productname" value="@Model.Username" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="text" name="password" class="form-control" id="productname" value="@Model.Password" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Display Name</label>
+                <div class="col-sm-10">
+                    <input type="text" name="displayname" class="form-control" id="productname" value="@Model.DisplayName" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" name="email" class="form-control" id="productname" value="@Model.Email" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Phone</label>
+                <div class="col-sm-10">
+                    <input type="text" name="phone" class="form-control" id="productname" value="@Model.Phone" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productsummary" class="col-sm-2 col-form-label">Introduction</label>
+                <div class="col-sm-10">
+                    <textarea name="Introduction" id="account-editor">@Html.Raw(Model.Introduction)</textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="exampleInputFile" class="col-sm-2 col-form-label">Role</label>
+                <div class="col-sm-10">
+                    <select class="form-select col-sm-10" aria-label="multiple select example" id="select-roles" name="roleid" style="width:100%">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" name="image" id="account-avatar" value="@Model.Image" hidden />
+                <label class="control-label" for="exampleInputPassword1">Upload an image</label>
+                <div class="col-md-12 text-center">
+                    @if (Model.AccountId == 0 || Model.Image == null)
+                    {
+                        <img src=@Url.Content("~/assets/img/default.jpg") id="image-upload" class="rounded mx-auto d-block" style="width: 256px" />
+                    }
+                    else
+                    {
+                        <img src=@Url.Content(Model.Image) id="image-upload" class="rounded mx-auto d-block" style="width: 256px" />
+                    }
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="file" name="fileUpload" id="exampleInputFile">
+                <i class="help-block">Upload an image</i>
+            </div>
+            <div class="form-group row" style="display:flex">
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm-2">
+                    @if (ViewBag.RoleName == "Admin") {
+                        <a class="btn btn-warning" href="/admin/account/index?page=@ViewBag.page">Back</a>
+                    }
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).on('change', 'input[name="fileUpload"]', function () {
+            let files = $(this).prop("files");
+            let formData = new FormData();
+            formData.append("file", files[0]);
+            console.log(formData)
+            $.ajax({
+                url: "/admin/account/uploadfile",
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                beforeSend: () => {
+
+                },
+                success: res => {
+                    if (res.status == 'success') {
+                        $('#image-upload').attr('src', res.filePath);
+                        $('#account-avatar').val(res.filePath);
+                    }
+                    else if (res.status == "error1") {
+                        console.log("Lỗi");
+                    }
+                },
+                error: error => {
+                    console.log(error);
+                }
+            })
+        });
+
+        $.ajax({
+            url: "/admin/account/getallroles",
+            type: "GET",
+            dataType: "json",
+            beforeSend: function () {
+
+            },
+            success: function (data) {
+                $('#select-roles').html('');
+                let modelCate = "@Model.RoleName";
+                let attribute = "";
+                data.forEach(function (item, index) {
+                    let itemName = item.name;
+                    if (modelCate.toString().includes(item.name)) {
+                        attribute = "selected"
+                    }
+                    else {
+                        attribute = "";
+                    }
+                    let row = `<option ${attribute} value="${item.roleId}">${item.name}</option>`;
+                    $('#select-roles').append(row);
+                });
+            },
+            error: function (error) {
+
+            },
+            complete: function () {
+
+            }
+        });
+
+        ClassicEditor
+            .create(document.querySelector('#account-editor'))
+            .catch(error => {
+                console.error(error);
+            });
+
+    </script>
+}

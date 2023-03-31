@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Nhom7_N03_TrangWebQuanCafe.props" />
+</Project>

@@ -1,0 +1,182 @@
+﻿@model X.PagedList.IPagedList<NewsView>
+@using Nhom7_N03_TrangWebQuanCafe.Models
+@using X.PagedList.Mvc.Core
+
+<!-- ========================
+   page title
+=========================== -->
+<section id="page-title" class="page-title page-title-layout5 text-center bg-overlay bg-overlay-2 bg-parallax">
+    <div class="bg-img"><img src="~/assets/images/backgrounds/8.jpg" alt="background"></div>
+    <svg class="pagetitle__divider-shape" xmlns="http://www.w3.org/2000/svg" width="22" height="61"
+         viewBox="0 0 22 61">
+        <path d="M799,769h2v61h-2V769Zm8,24.8a0.969,0.969,0,0,0-1.911,0,3.012,3.012,0,0,1-.883,2.16,4.486,4.486,0,0,0,0,6.136,3.083,3.083,0,0,1,0,4.32,4.486,4.486,0,0,0,0,6.136,3.088,3.088,0,0,1,0,4.325,4.5,4.5,0,0,0,0,6.142,3.014,3.014,0,0,1,.884,2.163,0.969,0.969,0,0,0,1.911,0,4.414,4.414,0,0,0-1.213-3.07,3.091,3.091,0,0,1,0-4.328,4.491,4.491,0,0,0,0-6.14,3.08,3.08,0,0,1,0-4.319,4.488,4.488,0,0,0,0-6.137,3.081,3.081,0,0,1,0-4.32A4.407,4.407,0,0,0,807,793.8Zm0-20a0.969,0.969,0,0,0-1.911,0,3.014,3.014,0,0,1-.883,2.16,4.486,4.486,0,0,0,0,6.136,3.083,3.083,0,0,1,0,4.32,4.488,4.488,0,0,0,0,6.137,3.087,3.087,0,0,1,0,4.324,4.5,4.5,0,0,0,0,6.142,3.014,3.014,0,0,1,.884,2.163,0.969,0.969,0,0,0,1.911,0,4.414,4.414,0,0,0-1.213-3.07,3.089,3.089,0,0,1,0-4.327,4.491,4.491,0,0,0,0-6.14,3.081,3.081,0,0,1,0-4.32,4.488,4.488,0,0,0,0-6.137,3.081,3.081,0,0,1,0-4.32A4.409,4.409,0,0,0,807,773.8ZM793,793.8a0.969,0.969,0,0,1,1.911,0,3.012,3.012,0,0,0,.883,2.16,4.486,4.486,0,0,1,0,6.136,3.083,3.083,0,0,0,0,4.32,4.486,4.486,0,0,1,0,6.136,3.088,3.088,0,0,0,0,4.325,4.5,4.5,0,0,1,0,6.142,3.014,3.014,0,0,0-.884,2.163,0.969,0.969,0,0,1-1.911,0,4.414,4.414,0,0,1,1.213-3.07,3.091,3.091,0,0,0,0-4.328,4.491,4.491,0,0,1,0-6.14,3.08,3.08,0,0,0,0-4.319,4.488,4.488,0,0,1,0-6.137,3.081,3.081,0,0,0,0-4.32A4.407,4.407,0,0,1,793,793.8Zm0-20a0.969,0.969,0,0,1,1.911,0,3.014,3.014,0,0,0,.883,2.16,4.486,4.486,0,0,1,0,6.136,3.083,3.083,0,0,0,0,4.32,4.488,4.488,0,0,1,0,6.137,3.087,3.087,0,0,0,0,4.324,4.5,4.5,0,0,1,0,6.142,3.014,3.014,0,0,0-.884,2.163,0.969,0.969,0,0,1-1.911,0,4.414,4.414,0,0,1,1.213-3.07,3.089,3.089,0,0,0,0-4.327,4.491,4.491,0,0,1,0-6.14,3.081,3.081,0,0,0,0-4.32,4.488,4.488,0,0,1,0-6.137,3.081,3.081,0,0,0,0-4.32A4.409,4.409,0,0,1,793,773.8Zm-4,5.2h2v41h-2V779Zm20,0h2v41h-2V779Z"
+              transform="translate(-789 -769)"></path>
+    </svg>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <span class="pagetitle__subheading">Don’t Miss</span>
+                <h1 class="pagetitle__heading">Our News</h1>
+            </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.page-title -->
+<!-- ======================
+  Blog standard
+========================= -->
+<section id="blogstandardRightSidebar" class="blog blog-standard pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-8" id="get-all-news">
+                @foreach(var item in Model) {
+                    <div class="post-item">
+                        <div class="post__img">
+                            <a href="/news/newsdetail?id=@item.NewsId">
+                                <img src="@item.Image" style="width:100%; max-height:410px" alt="post image">
+                            </a>
+                        </div><!-- /.post-img -->
+                        <div class="post__content">
+                            <div class="post__meta">
+                                <span class="post__meta-date">@item.CustomDate</span>
+                            </div>
+                            <h4 class="post__title"><a href="/news/newsdetail?id=@item.NewsId">@item.Title</a></h4>
+                            <p class="post__desc">
+                                @item.Summary
+                            </p>
+                            <a href="/news/newsdetail?id=@item.NewsId" class="btn btn__link btn__secondary">Read More</a>
+                        </div>
+                    </div>
+                }
+
+                <div class="product__pagination">
+                    @Html.PagedListPager(Model,page => Url.Action("Index", new {page=page, name = ViewBag.name, tagId = ViewBag.tagId, categoryId = ViewBag.categoryId}),new X.PagedList.Web.Common.PagedListRenderOptions(){
+                    LiElementClasses = new List<String> {"page-item"},
+                    PageClasses = new List<String> {"page-link"}
+                    })
+                </div>
+            </div><!-- /.col-lg-8 -->
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <aside class="sidebar">
+                    <div class="widget widget-search">
+                        <h5 class="widget__title">Search</h5>
+                        <div class="widget__content">
+                            <form action="/news/index" method="get" class="widget__form-search">
+                                <input type="text" name="name" class="form-control" value="@ViewBag.searchName" placeholder="Type and hit enter ...">
+                                <input type="hidden" name="tagId" value="@ViewBag.tagId" class="form-control">
+                                <input type="hidden" name="categoryId" value="@ViewBag.categoryId" class="form-control">
+                                <button class="btn" type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div><!-- /.widget-content -->
+                    </div><!-- /.widget-search -->
+                    <div class="widget widget-categories">
+                        <h5 class="widget__title">categories</h5>
+                        <div class="widget-content">
+                            <ul class="list-unstyled mb-0" id="get-all-categories">
+                                
+                            </ul>
+                        </div><!-- /.widget-content -->
+                    </div><!-- /.widget-categories -->
+                    <div class="widget widget-posts">
+                        <h5 class="widget__title">Recent Posts</h5>
+                        <div class="widget__content" id="get-recent-posts">
+                            
+                        </div><!-- /.widget-content -->
+                    </div><!-- /.widget-posts -->
+                    <div class="widget widget-tags">
+                        <h5 class="widget__title">Tags</h5>
+                        <div class="widget-content">
+                            <ul class="list-unstyled" id="get-all-tags">
+                            </ul>
+                        </div><!-- /.widget-content -->
+                    </div><!-- /.widget-Tags -->
+                </aside><!-- /.sidebar -->
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.blog standard -->
+
+@section Scripts {
+    <script>
+        $.ajax({
+            url: "/news/GetAllNewsCategories",
+            type: "GET",
+            dataType: "json",
+            beforeSend: function () {
+
+            },
+            success: function (data) {
+                console.log(data);
+                $('#get-all-categories').html('');
+                data.forEach(function (item, index) {
+                    let row = `<li><a href="/news/index?name=@ViewBag.name&tagId=@ViewBag.tagId&categoryId=${item.newsCategoryId}">${item.name} <span>(${item.numberOfPosts})</span></a></li>`;
+                    $('#get-all-categories').append(row);
+                });
+                $('#get-all-categories').append(`<li><a href="/news/index?name=@ViewBag.name&tagId=@ViewBag.tagId">All </a></li>`);
+            },
+            error: function (error) {
+
+            },
+            complete: function () {
+
+            }
+        });
+
+        $.ajax({
+            url: "/news/GetRecentNews",
+            type: "GET",
+            dataType: "json",
+            beforeSend: function () {
+
+            },
+            success: function (data) {
+                console.log(data);
+                $('#get-recent-posts').html('');
+                data.forEach(function (item, index) {
+                    let row = `<div class="widget-post-item">
+                                        <div class="widget__post-img">
+                                            <a href="/news/newsdetail?id=${item.newsId}"><img src="${item.image}" style="max-height:79px; width:100%" alt="product"></a>
+                                        <div class="widget__post-content" style="margin-top:10px">
+                                            <span class="widget__post-date">${item.customDate}</span>
+                                            <h6 class="widget__post-title">
+                                                <a href="/news/newsdetail?id=${item.newsId}">
+                                                    ${item.title}
+                                                </a>
+                                            </h6>
+                                        </div>
+                                    </div></li>`;
+                    $('#get-recent-posts').append(row);
+                });
+            },
+            error: function (error) {
+
+            },
+            complete: function () {
+
+            }
+        });
+
+        $.ajax({
+            url: "/news/GetAllTags",
+            type: "GET",
+            dataType: "json",
+            beforeSend: function () {
+
+            },
+            success: function (data) {
+                console.log(data);
+                $('#get-all-tags').html('');
+                data.forEach(function (item, index) {
+                    let row = `<li><a href="/news/index?name=@ViewBag.name&tagId=${item.newsTagId}&categoryId=@ViewBag.categoryId">${item.name}</a></li>`;
+                    $('#get-all-tags').append(row);
+                });
+                $('#get-all-tags').append(`<li><a href="/news/index?name=@ViewBag.name&categoryId=@ViewBag.categoryId">All</a></li>`);
+            },
+            error: function (error) {
+
+            },
+            complete: function () {
+
+            }
+        });
+    </script>
+}

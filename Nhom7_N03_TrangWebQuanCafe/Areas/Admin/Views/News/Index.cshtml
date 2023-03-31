@@ -1,0 +1,75 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage News";
+    var cnt = 1;
+}
+
+@model X.PagedList.IPagedList<NewsView>
+@using Nhom7_N03_TrangWebQuanCafe.Models
+@using X.PagedList.Mvc.Core
+
+<p style="color:red">@TempData["error"]</p>
+<h2 class="py-5">News List</h2>
+<div style="justify-content:space-between;display:flex;align-items:center">
+    <form action="/Admin/news/index" method="get" id="formSearch">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-inline mb-4" style="display:flex">
+                    <input type="text" name="name" class="form-control" placeholder="Type title..." />
+                    <button class="btn btn-primary ml-3">Search</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <a href="/admin/news/addorupdate?page=@ViewBag.page" class="btn btn-primary" style="height:50%">Add New</a>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th style="width:30%">Summary</th>
+            <th>Is Introduction</th>
+            <th>Tasks</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@cnt</td>
+                <td>@item.NewsId</td>
+                <td>
+                    <img src="@item.Image" style="width:64px;height:64px"/>
+                </td>
+                <td>@item.Title</td>
+                <td style="width:30%">@item.Summary</td>
+                @if (item.IsIntroduction.HasValue && item.IsIntroduction.Value) {
+                    <td>Yes</td>
+                }
+                else {
+                    if (item.IsIntroduction.HasValue && item.IsIntroduction.Value == false) {
+                        <td>No</td>
+                    }
+                    else {
+                        <td></td>
+                    }
+                }
+                <td>
+                    <a href="/Admin/news/AddOrUpdate?id=@item.NewsId&page=@ViewBag.page" class="btn btn-warning" style="color: white">Edit</a>
+                    <a href="/Admin/news/Delete?id=@item.NewsId&page=@ViewBag.page" class="btn btn-danger" style="color: white">Delete</a>
+                </td>
+            </tr>
+            cnt++;
+        }
+    </tbody>
+</table>
+
+<div class="product__pagination">
+    @Html.PagedListPager(Model,page => Url.Action("Index", new {page=page}),new X.PagedList.Web.Common.PagedListRenderOptions(){
+    LiElementClasses = new List<String> {"page-item"},
+    PageClasses = new List<String> {"page-link"}
+    })
+</div>

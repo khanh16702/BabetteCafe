@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Staffs";
+    string error = TempData["error"] as string;
+}
+
+@model Nhom7_N03_TrangWebQuanCafe.Models.staff
+
+<h2 class="py-5">Update Staffs</h2>
+@if (!string.IsNullOrEmpty(error))
+{
+    <p class="text-danger">@error</p>
+}
+<div class="row">
+    <div class="col-md-8">
+        <form action="/admin/staff/addorupdate?page=@ViewBag.page" method="post">
+            <input type="hidden" name="staffid" class="form-control" value="@Model.StaffId">
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">First Name</label>
+                <div class="col-sm-10">
+                    <input type="text" name="firstname" class="form-control" id="productname" value="@Model.FirstName" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Last Name</label>
+                <div class="col-sm-10">
+                    <input type="text" name="lastname" class="form-control" id="productname" value="@Model.LastName" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Date Of Birth</label>
+                <div class="col-sm-10">
+                    <input type="date" name="dateofbirth" class="form-control" id="productname" value="@Model.DateOfBirth" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Address</label>
+                <div class="col-sm-10">
+                    <input type="text" name="address" class="form-control" id="productname" value="@Model.Address" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Phone</label>
+                <div class="col-sm-10">
+                    <input type="text" name="phone" class="form-control" id="productname" value="@Model.Phone" required>
+                </div>
+            </div>
+            <div class="form-group row" style="display:flex">
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning" href="/admin/staff/index?page=@ViewBag.page">Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

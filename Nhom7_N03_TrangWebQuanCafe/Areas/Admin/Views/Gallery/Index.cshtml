@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Gallery";
+    var cnt = 1;
+}
+
+@model X.PagedList.IPagedList<Gallery>
+@using Nhom7_N03_TrangWebQuanCafe.Models
+@using X.PagedList.Mvc.Core
+
+<p style="color:red">@TempData["error"]</p>
+<h2 class="py-5">Images List</h2>
+<div style="justify-content:space-between;display:flex;align-items:center">
+    <a href="/admin/gallery/addorupdate?page=@ViewBag.page" class="btn btn-primary" style="height:50%">Add New</a>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Format</th>
+            <th>Tasks</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@cnt</td>
+                <td>@item.GalleryId</td>
+                <td>
+                    <img src="@item.Path" style="width:64px;height:64px"/>
+                </td>
+                <td>@item.Format</td>
+                <td>
+                    <a href="/Admin/gallery/Delete?id=@item.GalleryId&page=@ViewBag.page" class="btn btn-danger" style="color: white">Delete</a>
+                </td>
+            </tr>
+            cnt++;
+        }
+    </tbody>
+</table>
+
+<div class="product__pagination">
+    @Html.PagedListPager(Model,page => Url.Action("Index", new {page=page}),new X.PagedList.Web.Common.PagedListRenderOptions(){
+    LiElementClasses = new List<String> {"page-item"},
+    PageClasses = new List<String> {"page-link"}
+    })
+</div>

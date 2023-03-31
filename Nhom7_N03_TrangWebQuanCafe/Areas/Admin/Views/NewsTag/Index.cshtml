@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage News Tags";
+    var cnt = 1;
+}
+
+@using Nhom7_N03_TrangWebQuanCafe.Models
+@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<NewsTag>
+
+<p style="color:red">@TempData["error"]</p>
+<h2 class="py-5">News Tags List</h2>
+<div style="justify-content:space-between;display:flex;align-items:center">
+    <form action="/Admin/NewsTag/index" method="get" id="formSearch">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-inline mb-4" style="display:flex">
+                    <input type="text" name="name" class="form-control" placeholder="Type name..." />
+                    <button type="submit" class="btn btn-primary ml-3">Search</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <a href="/admin/NewsTag/addorupdate?page=@ViewBag.page" class="btn btn-primary" style="height:50%">Add New</a>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Created Date</th>
+            <th>Updated Date</th>
+            <th>Created By</th>
+            <th>Updated By</th>
+            <th>Tasks</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@cnt</td>
+                <td>@item.NewsTagId</td>
+                <td>@item.Name</td>
+                <td>@item.CreatedDate</td>
+                <td>@item.UpdatedDate</td>
+                <td>@item.CreatedBy</td>
+                <td>@item.UpdatedBy</td>
+                <td>
+                    <a href="/Admin/NewsTag/AddOrUpdate?id=@item.NewsTagId&page=@ViewBag.page" class="btn btn-warning" style="color: white">Edit</a>
+                    <a href="/Admin/NewsTag/Delete?id=@item.NewsTagId&page=@ViewBag.page" class="btn btn-danger" style="color: white">Delete</a>
+                </td>
+            </tr>
+            cnt++;
+        }
+    </tbody>
+</table>
+
+<div class="product__pagination">
+    @Html.PagedListPager(Model,page => Url.Action("Index", new {page=page}),new X.PagedList.Web.Common.PagedListRenderOptions(){
+    LiElementClasses = new List<String> {"page-item"},
+    PageClasses = new List<String> {"page-link"}
+    })
+</div>

@@ -1,0 +1,179 @@
+﻿@{
+    ViewData["Title"] = "My account";
+}
+
+@model Nhom7_N03_TrangWebQuanCafe.Models.AccountView
+
+<div class="container" style="margin-bottom:20px">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-xl-9" style="margin-top:20px">
+            <div class="card" style="border-radius: 15px;background-color:#f7eacd">
+                <div style="display:flex;justify-content:space-between">
+                    <h2>@ViewBag.username</h2>
+                    @if (ViewBag.Role == "admin") {
+                        <a href="/admin/home/index" class="btn pull-right" style="color:white;background-color:#C7A254">Go to manager's page</a>
+                    }
+                    @if (ViewBag.Role == "staff" || ViewBag.Role == "collaborator") {
+                        <a href="/admin/product/index" class="btn pull-right" style="color:white;background-color:#C7A254">Go to manager's page</a>
+                    }
+                </div>
+                <div class="card-body" >
+                    <p style="color:red">@TempData["error"]</p>
+                    <form action="/account/updateaccount" method="post">
+                        <div class="row align-items-center pt-4 pb-3">
+                            <input type="text" name="image" id="account-avatar" value="@ViewBag.avatar" hidden />
+                            <div class="col-md-12 text-center">
+                                @if (ViewBag.avatar == null) {
+                                    <img src="~/assets/img/default.jpg" id="image-upload" class="rounded mx-auto d-block" style="width: 256px" />
+                                }
+                                else {
+                                    <img src="@ViewBag.avatar" id="image-upload" class="rounded mx-auto d-block" style="width: 256px" />
+                                }
+                            </div>
+                        </div>
+                        <div class="row align-items-center pt-4 pb-3">
+                            <input type="file" name="fileUpload" id="exampleInputFile">
+                            <i class="help-block">Upload an image</i>
+                        </div>
+                        <hr class="mx-n3">
+                        <div class="row align-items-center py-3">
+                            <div class="col-md-3 ps-5">
+                                <h6 class="mb-0">Username:</h6>
+                            </div>
+                            <div class="col-md-9 pe-5">
+                                <input type="text" name="username" class="form-control form-control-lg" value="@ViewBag.username" readonly />
+                            </div>
+                        </div>
+                        <hr class="mx-n3">
+                        <div class="row align-items-center py-3">
+                            <div class="col-md-3 ps-5">
+                                <h6 class="mb-0">New password:</h6>
+                            </div>
+                            <div class="col-md-9 pe-5">
+                                <input type="password" name="password" class="form-control form-control-lg" />
+                            </div>
+                        </div>
+                        <hr class="mx-n3">
+                        <div class="row align-items-center py-3">
+                            <div class="col-md-3 ps-5">
+                                <h6 class="mb-0">Confirm password:</h6>
+                            </div>
+                            <div class="col-md-9 pe-5">
+                                <input type="password" name="retypedpassword" class="form-control form-control-lg" />
+                            </div>
+                        </div>
+                        <hr class="mx-n3">
+                        <div class="row align-items-center py-3">
+                            <div class="col-md-3 ps-5">
+                                <h6 class="mb-0">Display Name:</h6>
+                            </div>
+                            <div class="col-md-9 pe-5">
+                                <input type="text" name="displayname" class="form-control form-control-lg" value="@ViewBag.displayName"/>
+                            </div>
+                        </div>
+                        <hr class="mx-n3">
+                        <div class="row align-items-center py-3">
+                            <div class="col-md-3 ps-5">
+                                <h6 class="mb-0">First Name:</h6>
+                            </div>
+                            <div class="col-md-9 pe-5">
+                                <input type="text" name="firstname" class="form-control form-control-lg" value="@ViewBag.firstName"/>
+                            </div>
+                        </div>
+                        <hr class="mx-n3">
+                        <div class="row align-items-center py-3">
+                            <div class="col-md-3 ps-5">
+                                <h6 class="mb-0">Last Name:</h6>
+                            </div>
+                            <div class="col-md-9 pe-5">
+                                <input type="text" name="lastname" class="form-control form-control-lg" value="@ViewBag.lastName"/>
+                            </div>
+                        </div>
+                        <hr class="mx-n3">
+                        <div class="row align-items-center py-3">
+                            <div class="col-md-3 ps-5">
+                                <h6 class="mb-0">Address:</h6>
+                            </div>
+                            <div class="col-md-9 pe-5">
+                                <input type="text" name="address" class="form-control form-control-lg" value="@ViewBag.address"/>
+                            </div>
+                        </div>
+                        <hr class="mx-n3">
+                        <div class="row align-items-center py-3">
+                            <div class="col-md-3 ps-5">
+                                <h6 class="mb-0">Phone:</h6>
+                            </div>
+                            <div class="col-md-9 pe-5">
+                                <input type="text" name="phone" class="form-control form-control-lg" value="@ViewBag.phone"/>
+                            </div>
+                        </div>
+                        <hr class="mx-n3">
+                        <div class="row align-items-center py-3">
+                            <div class="col-md-3 ps-5">
+                                <h6 class="mb-0">Email:</h6>
+                            </div>
+                            <div class="col-md-9 pe-5">
+                                <input type="email" name="email" class="form-control form-control-lg" value="@ViewBag.email"/>
+                            </div>
+                        </div>
+                        <hr class="mx-n3">
+                        <div class="row align-items-center py-3">
+                            <div class="col-md-3 ps-5">
+                                <h6 class="mb-0">Introduction:</h6>
+                            </div>
+                            <div class="col-md-9 pe-5">
+                                <textarea name="introduction" class="form-control form-control-lg" id="account-editor">@Html.Raw(ViewBag.introduction)</textarea>
+                            </div>
+                        </div>
+                        <hr class="mx-n3">
+                        <div class="px-5 py-4">
+                            <button type="submit" class="btn btn-success btn-lg">Okay</button>
+                            <a href="/login/signout" class="btn btn-danger btn-lg pull-right">Log out</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        $(document).on('change', 'input[name="fileUpload"]', function () {
+            let files = $(this).prop("files");
+            let formData = new FormData();
+            formData.append("file", files[0]);
+            console.log(formData)
+            $.ajax({
+                url: "/account/uploadfile",
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                beforeSend: () => {
+
+                },
+                success: res => {
+                    if (res.status == 'success') {
+                        $('#image-upload').attr('src', res.filePath);
+                        $('#account-avatar').val(res.filePath);
+                    }
+                    else if (res.status == "error1") {
+                        console.log("Lỗi");
+                    }
+                },
+                error: error => {
+                    console.log(error);
+                }
+            })
+        });
+
+        ClassicEditor
+            .create(document.querySelector('#account-editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}

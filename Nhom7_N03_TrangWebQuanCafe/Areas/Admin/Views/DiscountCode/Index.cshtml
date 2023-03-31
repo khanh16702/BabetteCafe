@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Discount Codes";
+    var cnt = 1;
+}
+
+@model X.PagedList.IPagedList<DiscountCode>
+@using Nhom7_N03_TrangWebQuanCafe.Models
+@using X.PagedList.Mvc.Core
+
+<p style="color:red">@TempData["error"]</p>
+<h2 class="py-5">Discount Codes List</h2>
+<div style="justify-content:space-between;display:flex;align-items:center">
+    <form action="/Admin/discountcode/index" method="get" id="formSearch">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-inline mb-4" style="display:flex">
+                    <input type="text" name="name" class="form-control" placeholder="Type name..." />
+                    <button class="btn btn-primary ml-3">Search</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <a href="/admin/discountcode/addorupdate?page=@ViewBag.page" class="btn btn-primary" style="height:50%">Add New</a>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Decrease Amount</th>
+            <th>Active Date</th>
+            <th>Expire Date</th>
+            <th>Tasks</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@cnt</td>
+                <td>@item.DiscountCodeId</td>
+                <td>@item.Name</td>
+                <td>@item.DecreaseAmount</td>
+                <td>@item.ActiveDate</td>
+                <td>@item.ExpireDate</td>
+                <td>
+                    <a href="/Admin/discountcode/AddOrUpdate?id=@item.DiscountCodeId&page=@ViewBag.page" class="btn btn-warning" style="color: white">Edit</a>
+                    <a href="/Admin/discountcode/Delete?id=@item.DiscountCodeId&page=@ViewBag.page" class="btn btn-danger" style="color: white">Delete</a>
+                </td>
+            </tr>
+            cnt++;
+        }
+    </tbody>
+</table>
+
+<div class="product__pagination">
+    @Html.PagedListPager(Model,page => Url.Action("Index", new {page=page}),new X.PagedList.Web.Common.PagedListRenderOptions(){
+    LiElementClasses = new List<String> {"page-item"},
+    PageClasses = new List<String> {"page-link"}
+    })
+</div>

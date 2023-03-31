@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Banners";
+    var cnt = 1;
+}
+
+@using Nhom7_N03_TrangWebQuanCafe.Models
+@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<Banner>
+
+<p style="color:red">@TempData["error"]</p>
+<h2 class="py-5">Banners List</h2>
+<div style="justify-content:space-between;display:flex;align-items:center">
+    <form action="/Admin/banner/index" method="get" id="formSearch">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-inline mb-4" style="display:flex">
+                    <input type="text" name="name" class="form-control" placeholder="Type title..." />
+                    <button type="submit" class="btn btn-primary ml-3">Search</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <a href="/admin/banner/addorupdate?page=@ViewBag.page" class="btn btn-primary" style="height:50%">Add New</a>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Title</th>
+            <th>CreatedDate</th>
+            <th>UpdatedDate</th>
+            <th>CreatedBy</th>
+            <th>UpdatedBy</th>
+            <th>Tasks</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@cnt</td>
+                <td>@item.BannerId</td>
+                <td>
+                    <img src="@item.Image" style="width:64px;height:64px"/>
+                </td>
+                <td>@item.Title</td>
+                <td>@item.CreatedDate</td>
+                <td>@item.UpdatedDate</td>
+                <td>@item.CreatedBy</td>
+                <td>@item.UpdatedBy</td>
+                <td>
+                    <a href="/Admin/banner/AddOrUpdate?id=@item.BannerId&page=@ViewBag.page" class="btn btn-warning" style="color: white">Edit</a>
+                    <a href="/Admin/banner/Delete?id=@item.BannerId&page=@ViewBag.page" class="btn btn-danger" style="color: white">Delete</a>
+                </td>
+            </tr>
+            cnt++;
+        }
+    </tbody>
+</table>
+
+<div class="product__pagination">
+    @Html.PagedListPager(Model,page => Url.Action("Index", new {page=page}),new X.PagedList.Web.Common.PagedListRenderOptions(){
+    LiElementClasses = new List<String> {"page-item"},
+    PageClasses = new List<String> {"page-link"}
+    })
+</div>
