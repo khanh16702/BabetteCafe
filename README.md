@@ -6,6 +6,8 @@ Template front-end: https://elements.envato.com/fr/babette-restaurant-cafe-html5
 
 Nền tảng xây dựng back-end: ASP.NET Core 6
 
+Sửa lại tên kết nối database trong appsetting và Program.cs để chạy được
+
 ## Các loại người dùng
 * Người không đăng nhập
 * Người dùng thường
