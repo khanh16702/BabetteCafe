@@ -7,7 +7,6 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
     {
         public staff()
         {
-            ImportReceipts = new HashSet<ImportReceipt>();
             SalesReceipts = new HashSet<SalesReceipt>();
         }
 
@@ -18,7 +17,6 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
         public string? Address { get; set; }
         public string? Phone { get; set; }
 
-        public virtual ICollection<ImportReceipt> ImportReceipts { get; set; }
         public virtual ICollection<SalesReceipt> SalesReceipts { get; set; }
     }
 }

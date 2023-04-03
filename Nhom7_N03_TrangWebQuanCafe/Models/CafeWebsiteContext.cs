@@ -20,13 +20,9 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
         public virtual DbSet<Banner> Banners { get; set; } = null!;
         public virtual DbSet<BookTime> BookTimes { get; set; } = null!;
         public virtual DbSet<Cart> Carts { get; set; } = null!;
-        public virtual DbSet<ContactMail> ContactMails { get; set; } = null!;
         public virtual DbSet<Customer> Customers { get; set; } = null!;
         public virtual DbSet<DiscountCode> DiscountCodes { get; set; } = null!;
         public virtual DbSet<Gallery> Galleries { get; set; } = null!;
-        public virtual DbSet<ImportReceipt> ImportReceipts { get; set; } = null!;
-        public virtual DbSet<ImportReceiptDetail> ImportReceiptDetails { get; set; } = null!;
-        public virtual DbSet<ImportedGood> ImportedGoods { get; set; } = null!;
         public virtual DbSet<News> News { get; set; } = null!;
         public virtual DbSet<NewsAndCategory> NewsAndCategories { get; set; } = null!;
         public virtual DbSet<NewsAndTag> NewsAndTags { get; set; } = null!;
@@ -35,7 +31,6 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
         public virtual DbSet<Product> Products { get; set; } = null!;
         public virtual DbSet<ProductAndCategory> ProductAndCategories { get; set; } = null!;
         public virtual DbSet<ProductCategory> ProductCategories { get; set; } = null!;
-        public virtual DbSet<ProviderSide> ProviderSides { get; set; } = null!;
         public virtual DbSet<Role> Roles { get; set; } = null!;
         public virtual DbSet<SaleReceiptAndDiscount> SaleReceiptAndDiscounts { get; set; } = null!;
         public virtual DbSet<SalesReceipt> SalesReceipts { get; set; } = null!;
@@ -141,23 +136,6 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
                     .HasConstraintName("FK__Cart__SalesRecei__5DCAEF64");
             });
 
-            modelBuilder.Entity<ContactMail>(entity =>
-            {
-                entity.ToTable("ContactMail");
-
-                entity.Property(e => e.Email)
-                    .HasMaxLength(255)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.FirstName).HasMaxLength(255);
-
-                entity.Property(e => e.LastName).HasMaxLength(255);
-
-                entity.Property(e => e.Phone)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-            });
-
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.ToTable("Customer");
@@ -208,45 +186,6 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
                     .WithMany(p => p.Galleries)
                     .HasForeignKey(d => d.AccountId)
                     .HasConstraintName("FK__Gallery__Account__47DBAE45");
-            });
-
-            modelBuilder.Entity<ImportReceipt>(entity =>
-            {
-                entity.ToTable("ImportReceipt");
-
-                entity.Property(e => e.ImportDate).HasColumnType("datetime");
-
-                entity.HasOne(d => d.Provider)
-                    .WithMany(p => p.ImportReceipts)
-                    .HasForeignKey(d => d.ProviderId)
-                    .HasConstraintName("FK__ImportRec__Provi__6754599E");
-
-                entity.HasOne(d => d.Staff)
-                    .WithMany(p => p.ImportReceipts)
-                    .HasForeignKey(d => d.StaffId)
-                    .HasConstraintName("FK__ImportRec__Staff__66603565");
-            });
-
-            modelBuilder.Entity<ImportReceiptDetail>(entity =>
-            {
-                entity.ToTable("ImportReceiptDetail");
-
-                entity.HasOne(d => d.ImportReceipt)
-                    .WithMany(p => p.ImportReceiptDetails)
-                    .HasForeignKey(d => d.ImportReceiptId)
-                    .HasConstraintName("FK__ImportRec__Impor__6C190EBB");
-
-                entity.HasOne(d => d.ImportedGood)
-                    .WithMany(p => p.ImportReceiptDetails)
-                    .HasForeignKey(d => d.ImportedGoodId)
-                    .HasConstraintName("FK__ImportRec__Impor__6D0D32F4");
-            });
-
-            modelBuilder.Entity<ImportedGood>(entity =>
-            {
-                entity.ToTable("ImportedGood");
-
-                entity.Property(e => e.Name).HasMaxLength(50);
             });
 
             modelBuilder.Entity<News>(entity =>
@@ -382,16 +321,6 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
                 entity.Property(e => e.UpdatedBy).HasMaxLength(50);
 
                 entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
-            });
-
-            modelBuilder.Entity<ProviderSide>(entity =>
-            {
-                entity.HasKey(e => e.ProviderId)
-                    .HasName("PK__Provider__B54C687DF98B17D0");
-
-                entity.ToTable("ProviderSide");
-
-                entity.Property(e => e.Name).HasMaxLength(255);
             });
 
             modelBuilder.Entity<Role>(entity =>

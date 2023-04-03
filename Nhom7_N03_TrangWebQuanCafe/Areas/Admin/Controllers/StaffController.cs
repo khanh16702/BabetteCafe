@@ -124,12 +124,6 @@ namespace Nhom7_N03_TrangWebQuanCafe.Areas.Admin.Controllers
                 item.StaffId = null;
             }
 
-            var inImportReceipt = _dbContext.ImportReceipts.Where(x => x.StaffId == id);
-            foreach(var item in inImportReceipt)
-            {
-                item.StaffId = null;
-            }
-
             var query = _dbContext.staff.Find(id);
             _dbContext.staff.Remove(query);
             _dbContext.SaveChanges();
