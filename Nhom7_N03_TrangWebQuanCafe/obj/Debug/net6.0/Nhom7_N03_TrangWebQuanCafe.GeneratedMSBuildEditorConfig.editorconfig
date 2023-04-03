@@ -40,8 +40,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Customer/AddCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJcQWRkQ2FydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Customer/AddOrUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJcQWRkT3JVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Customer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Customer/ViewCart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJcVmlld0NhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/DiscountCode/AddOrUpdate.cshtml]
@@ -104,6 +116,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUm9sZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/SaleReceipt/GetDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2FsZVJlY2VpcHRcR2V0RGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/SaleReceipt/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2FsZVJlY2VpcHRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -124,6 +144,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3RhZmZcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Table/AddOrUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFibGVcQWRkT3JVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Areas/Admin/Views/Table/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGFibGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/About/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWJvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -134,6 +162,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Cart/ThankYou.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxUaGFua1lvdS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Checkout/Index.cshtml]
@@ -194,6 +226,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Shop/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/Shop/ShopDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxTaG9wRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/visual studio - code/.NET MVC/BTL/Nhom7_N03_TrangWebQuanCafe/Nhom7_N03_TrangWebQuanCafe/Views/_ViewImports.cshtml]

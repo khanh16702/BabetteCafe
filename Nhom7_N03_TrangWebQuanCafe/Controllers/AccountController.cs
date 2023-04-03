@@ -37,7 +37,7 @@ namespace Nhom7_N03_TrangWebQuanCafe.Controllers
                     .Where(x => x.Username == accClaim.Value);
             var cartCount = _dbContext.Carts
                 .Join(_dbContext.Accounts, a => a.AccountId, b => b.AccountId, (a,b) => new {a,b} )
-                .Where(x => x.b.Username == accClaim.Value)
+                .Where(x => x.b.Username == accClaim.Value && x.a.IsPlaced == false)
                 .ToList();
             ViewBag.CartCount = cartCount.Count();
 
@@ -97,7 +97,7 @@ namespace Nhom7_N03_TrangWebQuanCafe.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateAccount(AccountView model)
+        public IActionResult UpdateAccount(AccountView model, int placeOrder)
         {
             var claims = HttpContext.User.Identity as ClaimsIdentity;
             var accClaim = claims.FindFirst(ClaimTypes.NameIdentifier);
@@ -127,6 +127,36 @@ namespace Nhom7_N03_TrangWebQuanCafe.Controllers
 
             _dbContext.Accounts.Update(myAcc);
             _dbContext.SaveChanges();
+            if (placeOrder > 0)
+            {
+                var queryBuyDone = _dbContext.Carts
+                    .Where(x => x.AccountId == myAcc.AccountId && x.IsPlaced == false)
+                    .ToList();
+                foreach(var item in queryBuyDone)
+                {
+                    item.IsPlaced = true;
+                    var queryUpdateProduct = _dbContext.Products.Find(item.ProductId);
+                    if (queryUpdateProduct.Quantity >= item.Quantity)
+                    {
+                        queryUpdateProduct.Quantity -= item.Quantity;
+                    }
+                    else
+                    {
+                        TempData["productQuantityError"] = $"{queryUpdateProduct.Name} is not enough in stock right now :(";
+                        return Redirect("/cart/index");
+                    }
+                    _dbContext.Products.Update(queryUpdateProduct);
+                    _dbContext.Carts.Update(item);
+                }
+                var saleReceipt = _dbContext.SalesReceipts.Find(queryBuyDone.FirstOrDefault().SalesReceiptId);
+                saleReceipt.CreatedDate = DateTime.Now;
+                saleReceipt.IsDelivered = false;
+                saleReceipt.ShippingFee = 0;
+                _dbContext.SalesReceipts.Update(saleReceipt);
+
+                _dbContext.SaveChanges();
+                return Redirect("/cart/thankyou");
+            }
             return Redirect("/account/index");
         }
     }

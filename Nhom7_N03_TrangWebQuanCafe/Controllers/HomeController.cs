@@ -25,7 +25,7 @@ namespace Nhom7_N03_TrangWebQuanCafe.Controllers
                     .Where(x => x.Username == accClaim.Value)
                     .FirstOrDefault().AccountId;
                 var cartCount = _dbContext.Carts
-                    .Where(x => x.AccountId == accId)
+                    .Where(x => x.AccountId == accId && x.IsPlaced == false)
                     .ToList();
                 ViewBag.CartCount = cartCount.Count();
             }
@@ -34,7 +34,9 @@ namespace Nhom7_N03_TrangWebQuanCafe.Controllers
                 ViewBag.CurrentUsername = "";
                 ViewBag.CartCount = 0;
             }
-            return View();
+
+            var query = _dbContext.Banners.ToList();
+            return View(query);
         }
 
         public IActionResult GetAllBanners()

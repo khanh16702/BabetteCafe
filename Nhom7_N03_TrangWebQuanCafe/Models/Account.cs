@@ -10,6 +10,7 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
             Carts = new HashSet<Cart>();
             Galleries = new HashSet<Gallery>();
             News = new HashSet<News>();
+            SalesReceipts = new HashSet<SalesReceipt>();
         }
 
         public int AccountId { get; set; }
@@ -29,5 +30,6 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
         public virtual ICollection<Cart> Carts { get; set; }
         public virtual ICollection<Gallery> Galleries { get; set; }
         public virtual ICollection<News> News { get; set; }
+        public virtual ICollection<SalesReceipt> SalesReceipts { get; set; }
     }
 }

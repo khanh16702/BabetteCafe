@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Sale Receipt Detail";
+    var cnt = 1;
+}
+
+@model List<CartView>
+@using Nhom7_N03_TrangWebQuanCafe.Models
+@using X.PagedList.Mvc.Core
+
+<p style="color:red">@TempData["error"]</p>
+<h2 class="py-5">Products List</h2>
+<a href="/admin/salereceipt/index?page=@ViewBag.page" class="btn btn-warning">Back</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@cnt</td>
+                <td>@item.CartId</td>
+                <td>@item.Name</td>
+                <td>@item.ProductPrice</td>
+                <td>@item.Quantity</td>
+                <td>@item.TotalPrice</td>
+            </tr>
+            cnt++;
+        }
+    </tbody>
+</table>

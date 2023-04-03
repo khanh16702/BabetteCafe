@@ -15,7 +15,9 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
         public bool? IsDelivered { get; set; }
         public double? ShippingFee { get; set; }
         public int? StaffId { get; set; }
+        public int? AccountId { get; set; }
 
+        public virtual Account? Account { get; set; }
         public virtual staff? Staff { get; set; }
         public virtual ICollection<Cart> Carts { get; set; }
     }

@@ -1,0 +1,126 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Customer Cart";
+    string error = TempData["error"] as string;
+}
+
+@model Nhom7_N03_TrangWebQuanCafe.Models.Product
+
+<h2 class="py-5">Update Customer Cart</h2>
+@if (!string.IsNullOrEmpty(error))
+{
+    <p class="text-danger">@error</p>
+}
+<div class="row">
+    <div class="col-md-8">
+        <form action="/admin/customer/addcart?page=@ViewBag.page" method="post">
+            <input type="hidden" name="customerid" class="form-control" id="productname" value="@ViewBag.customerId"/>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Category</label>
+                <div class="col-sm-10">
+                    <select class="form-select" id="get-all-categories" onchange="changeCategory()">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Product Name</label>
+                <div class="col-sm-10">
+                    <select class="form-select" name="productid" id="get-products">
+                        
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Quantity</label>
+                <div class="col-sm-10">
+                    <input type="number" name="quantity" class="form-control" id="productname" value="0" required />
+                </div>
+            </div>
+            <div class="form-group row" style="display:flex">
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning" href="/admin/customer/viewcart?customerId=@ViewBag.customerId&page=@ViewBag.page">Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $.ajax({
+            url: "/shop/GetAllCategories",
+            type: "GET",
+            dataType: "json",
+            beforeSend: function () {
+
+            },
+            success: function (data) {
+                console.log(data);
+                $('#get-all-categories').html('');
+                $('#get-all-categories').append(`<option selected value="0">All</option>`);
+                data.forEach(function (item, index) {
+                    let row = `<option value="${item.productCategoryId}">${item.name}</option>`;
+                    $('#get-all-categories').append(row);
+                });
+            },
+            error: function (error) {
+
+            },
+            complete: function () {
+
+            }
+        });
+
+        $.ajax({
+            url: "/admin/customer/GetAllProducts?categoryId=0",
+            type: "GET",
+            dataType: "json",
+            beforeSend: function () {
+
+            },
+            success: function (data) {
+                console.log(data);
+                $('#get-products').html('');
+                data.forEach(function (item, index) {
+                    let row = `<option value="${item.productId}">${item.name}</option>`;
+                    $('#get-products').append(row);
+                });
+            },
+            error: function (error) {
+
+            },
+            complete: function () {
+
+            }
+        });
+
+        function changeCategory() {
+            var categoryId = $('#get-all-categories').find(":selected").val();
+            $.ajax({
+                url: "/admin/customer/GetAllProducts?categoryId=" + categoryId,
+                type: "GET",
+                dataType: "json",
+                beforeSend: function () {
+
+                },
+                success: function (data) {
+                    console.log(data);
+                    $('#get-products').html('');
+                    data.forEach(function (item, index) {
+                        let row = `<option value="${item.productId}">${item.name}</option>`;
+                        $('#get-products').append(row);
+                    });
+                },
+                error: function (error) {
+
+                },
+                complete: function () {
+
+                }
+            });
+        }
+    </script>
+}

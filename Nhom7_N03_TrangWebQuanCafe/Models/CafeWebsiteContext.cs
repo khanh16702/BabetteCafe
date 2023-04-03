@@ -18,6 +18,7 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
 
         public virtual DbSet<Account> Accounts { get; set; } = null!;
         public virtual DbSet<Banner> Banners { get; set; } = null!;
+        public virtual DbSet<BookTime> BookTimes { get; set; } = null!;
         public virtual DbSet<Cart> Carts { get; set; } = null!;
         public virtual DbSet<ContactMail> ContactMails { get; set; } = null!;
         public virtual DbSet<Customer> Customers { get; set; } = null!;
@@ -106,6 +107,13 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
                 entity.Property(e => e.UpdatedBy).HasMaxLength(50);
 
                 entity.Property(e => e.UpdatedDate).HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<BookTime>(entity =>
+            {
+                entity.ToTable("BookTime");
+
+                entity.Property(e => e.BookTimeId).ValueGeneratedNever();
             });
 
             modelBuilder.Entity<Cart>(entity =>
@@ -416,6 +424,11 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
 
                 entity.Property(e => e.CreatedDate).HasColumnType("datetime");
 
+                entity.HasOne(d => d.Account)
+                    .WithMany(p => p.SalesReceipts)
+                    .HasForeignKey(d => d.AccountId)
+                    .HasConstraintName("FK__SalesRece__Accou__208CD6FA");
+
                 entity.HasOne(d => d.Staff)
                     .WithMany(p => p.SalesReceipts)
                     .HasForeignKey(d => d.StaffId)
@@ -429,11 +442,14 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
 
                 entity.ToTable("TableShop");
 
-                entity.Property(e => e.BookTime).HasColumnType("datetime");
-
                 entity.Property(e => e.Status)
                     .HasMaxLength(20)
                     .IsUnicode(false);
+
+                entity.HasOne(d => d.BookTime)
+                    .WithMany(p => p.TableShops)
+                    .HasForeignKey(d => d.BookTimeId)
+                    .HasConstraintName("FK__TableShop__BookT__1F98B2C1");
             });
 
             modelBuilder.Entity<TableShopAndAccount>(entity =>

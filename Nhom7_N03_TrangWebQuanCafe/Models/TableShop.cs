@@ -8,6 +8,8 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
         public int TableId { get; set; }
         public int? Slots { get; set; }
         public string? Status { get; set; }
-        public DateTime? BookTime { get; set; }
+        public int? BookTimeId { get; set; }
+
+        public virtual BookTime? BookTime { get; set; }
     }
 }

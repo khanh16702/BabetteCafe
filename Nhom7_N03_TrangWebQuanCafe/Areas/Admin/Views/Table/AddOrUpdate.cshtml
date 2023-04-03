@@ -1,0 +1,70 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Tables";
+    string error = TempData["error"] as string;
+}
+
+@model Nhom7_N03_TrangWebQuanCafe.Models.TableShop
+
+<h2 class="py-5">Update Tables</h2>
+@if (!string.IsNullOrEmpty(error))
+{
+    <p class="text-danger">@error</p>
+}
+
+@if (Model.TableId == 0) {
+    <div class="row">
+        <div class="col-md-8">
+            <form action="/admin/table/addorupdate?page=@ViewBag.page" method="post">
+                <div class="form-group row">
+                    <label for="exampleInputFile" class="col-sm-2 col-form-label">Slots</label>
+                    <div class="col-sm-10">
+                        <select class="form-select col-sm-10" name="slots" style="width:100%">
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row" style="display:flex">
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <a class="btn btn-warning" href="/admin/table/index?page=@ViewBag.page">Back</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+else {
+    <div class="row">
+        <div class="col-md-8">
+            <form action="/admin/table/addorupdate?page=@ViewBag.page" method="post">
+                <input type="hidden" name="tableid" class="form-control" id="productname" value="@Model.TableId">
+                <input type="hidden" name="slots" class="form-control" id="productname" value="@Model.Slots">
+                <input type="hidden" name="booktimeid" class="form-control" id="productname" value="-1">
+                <div class="form-group row">
+                    <label for="exampleInputFile" class="col-sm-2 col-form-label">Status</label>
+                    <div class="col-sm-10">
+                        <select class="form-select col-sm-10" name="status" style="width:100%">
+                            <option selected value="Available">Available</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row" style="display:flex">
+                    <div class="col-sm-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <a class="btn btn-warning" href="/admin/table/index?page=@ViewBag.page">Back</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+}

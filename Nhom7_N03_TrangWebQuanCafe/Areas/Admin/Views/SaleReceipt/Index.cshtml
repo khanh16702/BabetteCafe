@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Sale Receipts";
+    var cnt = 1;
+}
+
+@model X.PagedList.IPagedList<SalesReceipt>
+@using Nhom7_N03_TrangWebQuanCafe.Models
+@using X.PagedList.Mvc.Core
+
+<p style="color:red">@TempData["error"]</p>
+<h2 class="py-5">Sale Receipts List</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Created Date</th>
+            <th>Is Delivered</th>
+            <th>Shipping Fee</th>
+            <th>Staff ID</th>
+            <th>Tasks</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@cnt</td>
+                <td>@item.SalesReceiptId</td>
+                <td>@item.CreatedDate</td>
+                @{
+                    if (item.IsDelivered.Value == true)
+                    {
+                        <td>Yes</td>
+                    }
+                    else
+                    {
+                        <td>No</td>
+                    }
+                }
+                <td>@item.ShippingFee</td>
+                <td>@item.StaffId</td>
+                <td>
+                    <a href="/Admin/SaleReceipt/GetDetail?id=@item.SalesReceiptId&page=@ViewBag.page" class="btn btn-primary" style="color: white">Detail</a>
+                    <a href="/Admin/SaleReceipt/UpdateDelivered?id=@item.SalesReceiptId&isDelivered=@item.IsDelivered&page=@ViewBag.page" class="btn btn-warning" style="color: white">Change Status</a>
+                </td>
+            </tr>
+            cnt++;
+        }
+    </tbody>
+</table>
+
+<div class="product__pagination">
+    @Html.PagedListPager(Model,page => Url.Action("Index", new {page=page}),new X.PagedList.Web.Common.PagedListRenderOptions(){
+    LiElementClasses = new List<String> {"page-item"},
+    PageClasses = new List<String> {"page-link"}
+    })
+</div>

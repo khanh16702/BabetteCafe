@@ -11,6 +11,7 @@ namespace Nhom7_N03_TrangWebQuanCafe.Models
         public int? AccountId { get; set; }
         public int? CustomerId { get; set; }
         public int? SalesReceiptId { get; set; }
+        public bool? IsPlaced { get; set; }
 
         public virtual Account? Account { get; set; }
         public virtual Customer? Customer { get; set; }

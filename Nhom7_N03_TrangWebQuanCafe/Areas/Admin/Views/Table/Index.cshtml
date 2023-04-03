@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Tables";
+    var cnt = 1;
+}
+
+@model X.PagedList.IPagedList<TableShop>
+@using Nhom7_N03_TrangWebQuanCafe.Models
+@using X.PagedList.Mvc.Core
+
+<p style="color:red">@TempData["error"]</p>
+<h2 class="py-5">Tables List</h2>
+<div style="justify-content:space-between;display:flex;align-items:center">
+    <a href="/admin/table/addorupdate?page=@ViewBag.page" class="btn btn-primary" style="height:50%">Add New</a>
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Slots</th>
+            <th>Status</th>
+            <th>Task</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@cnt</td>
+                <td>@item.TableId</td>
+                <td>@item.Slots</td>
+                <td>@item.Status</td>
+                <td>
+                    <a href="/Admin/table/AddOrUpdate?id=@item.TableId&page=@ViewBag.page" class="btn btn-warning" style="color: white">Edit</a>
+                </td>
+            </tr>
+            cnt++;
+        }
+    </tbody>
+</table>
+
+<div class="product__pagination">
+    @Html.PagedListPager(Model,page => Url.Action("Index", new {page=page}),new X.PagedList.Web.Common.PagedListRenderOptions(){
+    LiElementClasses = new List<String> {"page-item"},
+    PageClasses = new List<String> {"page-link"}
+    })
+</div>

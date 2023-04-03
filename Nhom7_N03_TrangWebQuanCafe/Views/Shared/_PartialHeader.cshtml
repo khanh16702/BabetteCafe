@@ -45,16 +45,20 @@
                     <a href="#" class="navbar__action-btn search-popup-trigger"><i class="fa fa-search"></i></a>
                     <a href="/reservation/index"
                        class="navbar__action-btn navbar__action-btn-reserve btn btn__primary">Reservation</a>
-                    <a href="/cart/index" class="navbar__action-btn">
-                        <i class="icon-cart"></i>
-                        <span class="cart__label">@ViewBag.CartCount</span>
-                    </a>
                     @if (ViewBag.CurrentUsername == "") {
+                        <a href="/login/index" class="navbar__action-btn">
+                            <i class="icon-cart"></i>
+                            <span class="cart__label">@ViewBag.CartCount</span>
+                        </a>
                         <a href="/login/index" class="navbar__action-btn">
                             <i class="fa fa-sign-in" aria-hidden="true"></i>
                         </a>
                     }
                     else {
+                        <a href="/cart/index" class="navbar__action-btn">
+                            <i class="icon-cart"></i>
+                            <span class="cart__label">@ViewBag.CartCount</span>
+                        </a>
                         <a href="/account/index" class="navbar__action-btn">
                             <i class="fa fa-user" aria-hidden="true"></i>
                         </a>

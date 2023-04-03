@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Customer's Cart";
+    var cnt = 1;
+}
+
+@model X.PagedList.IPagedList<CartView>
+@using Nhom7_N03_TrangWebQuanCafe.Models
+@using X.PagedList.Mvc.Core
+
+<p style="color:red">@TempData["error"]</p>
+<h2 class="py-5">Customer's Cart</h2>
+<div style="justify-content:space-between;display:flex;align-items:center">
+    <div>
+        <a href="/admin/customer/addcart?cusId=@ViewBag.customerId&page=@ViewBag.page" class="btn btn-primary" style="height:50%">Add New</a>
+        <a href="/admin/customer/index?page=@ViewBag.page" class="btn btn-warning" style="height:50%">Back</a>
+    </div>
+    @if (ViewBag.cartCount > 0) {
+        <a href="/admin/customer/createsalereceipt?customerId=@ViewBag.customerId&staffId=@ViewBag.accountId&page=@ViewBag.page" class="btn btn-success" style="height:50%">Create Sale Receipt</a>
+    }
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Tasks</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@cnt</td>
+                <td>@item.CartId</td>
+                <td>@item.Name</td>
+                <td>@item.ProductPrice</td>
+                <td>@item.Quantity</td>
+                <td>@item.TotalPrice</td>
+                <td>
+                    <a href="/Admin/customer/Delete?id=@item.CartId&customerId=@item.CustomerId&page=@ViewBag.page" class="btn btn-danger" style="color: white">Delete</a>
+                </td>
+            </tr>
+            cnt++;
+        }
+    </tbody>
+</table>
+
+<div class="product__pagination">
+    @Html.PagedListPager(Model,page => Url.Action("ViewCart", new {page=page}),new X.PagedList.Web.Common.PagedListRenderOptions(){
+    LiElementClasses = new List<String> {"page-item"},
+    PageClasses = new List<String> {"page-link"}
+    })
+</div>

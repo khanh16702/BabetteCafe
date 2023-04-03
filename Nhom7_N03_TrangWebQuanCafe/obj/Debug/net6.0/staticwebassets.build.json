@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OCGoxsoR8wBOZ9pYtUL0n+fKP3zS1oHYEQ8ZtTIO7VI=",
+  "Hash": "nQgHb7hdQYnlQNF4vc3jQmSANkzOEHWJQTk48CDaPEY=",
   "Source": "Nhom7_N03_TrangWebQuanCafe",
   "BasePath": "_content/Nhom7_N03_TrangWebQuanCafe",
   "Mode": "Default",
@@ -15640,6 +15640,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\adminlte\\plugins\\timepicker\\bootstrap-timepicker.min.js"
     },
     {
+      "Identity": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\css\\Biling.css",
+      "SourceId": "Nhom7_N03_TrangWebQuanCafe",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\",
+      "BasePath": "_content/Nhom7_N03_TrangWebQuanCafe",
+      "RelativePath": "assets/css/Biling.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\Biling.css"
+    },
+    {
       "Identity": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\css\\forbidden.css",
       "SourceId": "Nhom7_N03_TrangWebQuanCafe",
       "SourceType": "Discovered",
@@ -15689,6 +15706,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\css\\style.css"
+    },
+    {
+      "Identity": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\css\\thanks.css",
+      "SourceId": "Nhom7_N03_TrangWebQuanCafe",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\",
+      "BasePath": "_content/Nhom7_N03_TrangWebQuanCafe",
+      "RelativePath": "assets/css/thanks.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\thanks.css"
     },
     {
       "Identity": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\fonts\\ElegantIcons.eot",
@@ -17865,6 +17899,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\account-image\\0c216c1b-b800-45b9-b23f-46260f541cf2people2.jfif"
+    },
+    {
+      "Identity": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\img\\account-image\\330265c0-3e7a-46b3-923e-db03be3d070bphoto-1438761681033-6461ffad8d80.jfif",
+      "SourceId": "Nhom7_N03_TrangWebQuanCafe",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\",
+      "BasePath": "_content/Nhom7_N03_TrangWebQuanCafe",
+      "RelativePath": "assets/img/account-image/330265c0-3e7a-46b3-923e-db03be3d070bphoto-1438761681033-6461ffad8d80.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\account-image\\330265c0-3e7a-46b3-923e-db03be3d070bphoto-1438761681033-6461ffad8d80.jfif"
     },
     {
       "Identity": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\img\\account-image\\4463a489-453b-40c6-a887-02103bae028ee98f2535036667.58bc6981515a3.jpg",

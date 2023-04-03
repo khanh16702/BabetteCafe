@@ -1,0 +1,195 @@
+﻿@model Product
+
+<section id="page-title" class="page-title page-title-layout14 bg-overlay bg-overlay-2">
+    <div class="bg-img"><img src="~/assets/images/backgrounds/3.jpg" alt="background"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h1 class="pagetitle__heading">@Model.Name</h1>
+            </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.page-title -->
+<!-- ========================
+   product single
+=========================== -->
+<section id="productSingle" class="shop product-single pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="product__single-img">
+                    <img src="@Model.Image" class="zoomin" alt="product">
+                </div><!-- /.product-img -->
+            </div><!-- /.col-lg-6 -->
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <h4 class="product__title">@Model.Name</h4>
+                <span class="product__price">$ @Model.Price</span>
+                <hr class="hr-dashed mt-30 mb-30">
+                <div class="product__desc">
+                    <p>@Model.Summary</p>
+                </div><!-- /.product-desc -->
+                <div class="product__form-wrap mb-30">
+                    <div class="product__quantity d-flex">
+                        <div class="quantity__input-wrap mr-20">
+                            <i class="decrease-qty"></i>
+                            <input type="number" value="1" class="qty-input" id="product-quantity">
+                            <i class="increase-qty"></i>
+                        </div>
+                        @if (ViewBag.quantity > 0) {
+                            <button class="btn btn__primary" onclick="addToCart()">add to cart</button>
+                        }
+                        else {
+                            <button class="btn btn__secondary" onclick="soldOut()">add to cart</button>
+                        }
+                    </div><!-- /.product-quantity -->
+                </div>
+                <div class="product__meta">
+                    <div class="product__meta-cat" id="get-product-categories">
+                        
+                    </div><!-- /.product__meta-cat -->
+                </div><!-- /.product__meta -->
+                <hr class="hr-dashed mt-30 mb-30">
+                <div class="product__share d-flex align-items-center">
+                    <h6 class="product__share-title mb-0 mr-20">share:</h6>
+                    <ul class="social__icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div><!-- /.product-share -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1">
+                <div class="product__tabs mt-90">
+                    <nav class="nav nav-tabs justify-content-center">
+                        <a class="nav__link active" data-toggle="tab" href="#Description">Description</a>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="Description">
+                            <p>@Html.Raw(Model.Description)</p>
+                        </div>
+                    </div>
+                </div><!-- /.product-tabs -->
+            </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.product single -->
+<!-- ========================
+  Related products
+=========================== -->
+<section id="related-products" class="relted-products text-center pt-80 pb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h6 class="related__products-title font-weight-bold mb-30">Related Products</h6>
+            </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+        <div class="row" id="get-related-products">
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.related-products -->
+
+@section Scripts{
+    <script>
+        $.ajax({
+            url: "/shop/GetProductCategories?id=@Model.ProductId",
+            type: "GET",
+            dataType: "json",
+            beforeSend: function () {
+
+            },
+            success: function (data) {
+                console.log(data);
+                $('#get-product-categories').html('');
+                $('#get-product-categories').append(`<span class="product__meta-title">Categories: </span>`);
+                data.forEach(function (item, index) {
+                    let row = ` <a href="/shop/index?categoryId=${item.productCategoryId}">${item.name}</a>`;
+                    $('#get-product-categories').append(row);
+                });
+            },
+            error: function (error) {
+
+            },
+            complete: function () {
+
+            }
+        });
+
+        $.ajax({
+            url: "/shop/GetRelatedProducts?id=@Model.ProductId",
+            type: "GET",
+            dataType: "json",
+            beforeSend: function () {
+
+            },
+            success: function (data) {
+                $('#get-related-products').html('');
+                console.log(data);
+                data.forEach(function (item, index) {
+                    let row = `<div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="product-item">
+                                        <div class="product__img">
+                                            <img src="${item.image}" style="height:240px" alt="Product">
+                                            <div class="product__hover">
+                                                <div class="product__action">
+                                                    <a href="#" class="btn btn__primary btn__hover2">Add To Cart</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product__content">
+                                            <h4 class="product__title"><a href="/shop/shopdetail?id=${item.productId}">${item.name}</a></h4>
+                                            <span class="product__price">$${item.price}</span>
+                                        </div>
+                                    </div>
+                                </div>`;
+                    $('#get-related-products').append(row);
+                });
+            },
+            error: function (error) {
+
+            },
+            complete: function () {
+
+            }
+        });
+
+        function soldOut() {
+            alert("This product has been sold out :(");
+        }
+
+        function addToCart() {
+            var accRole = "@ViewBag.accRole";
+            if (accRole != 6) {
+                alert("You must login as a user to continue!");
+            }
+            else {
+                var quantity = $("#product-quantity").val();
+                $.ajax({
+                    url: "/shop/AddToCart?id=@Model.ProductId&buyQuantity=" + quantity,
+                    type: "GET",
+                    dataType: "json",
+                    beforeSend: function () {
+
+                    },
+                    success: function (data) {
+                        if (data.result == "success") {
+                            alert("Add product to cart successfully!");
+                        }
+                        else {
+                            alert("This product has been sold out :(");
+                        }
+                    },
+                    error: function (error) {
+
+                    },
+                    complete: function () {
+
+                    }
+                });
+            }
+        }
+
+    </script>
+}

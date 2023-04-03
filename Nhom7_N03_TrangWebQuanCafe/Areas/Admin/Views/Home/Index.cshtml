@@ -1,5 +1,141 @@
 ﻿@{
     Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Dashboard";
 }
 
-<h1>Index</h1>
+<h2>Admin Page</h2>
+<section class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>@ViewBag.NewOrders</h3>
+                    <p>New Orders</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-bag"></i>
+                </div>
+                <a href="/admin/salereceipt/index" class="small-box-footer">Information <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green" id="revenue-in-month">
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- Main row -->
+    <div class="row">
+        <!-- Left col -->
+        <section class="col-lg-7 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <div class="nav-tabs-custom box box-success">
+                <!-- Tabs within a box -->
+                <ul class="nav nav-tabs pull-right">
+                    <li class="active"><a href="#sales-chart" data-toggle="tab">Donut</a></li>
+                    <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
+                </ul>
+                <div class="tab-content no-padding">
+                    <!-- Morris chart - Sales -->
+                    <div class="chart tab-pane active" id="sales-chart" style="position: relative; height: 300px;"></div>
+                </div>
+            </div>
+
+        </section>
+        <!-- /.Left col -->
+        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+        <section class="col-lg-5 connectedSortable">
+            <!-- Calendar -->
+            <div class="box box-solid bg-green-gradient">
+                <div class="box-header">
+                    <i class="fa fa-calendar"></i>
+
+                    <h3 class="box-title">Calendar</h3>
+                    <!-- tools box -->
+                    <div class="pull-right box-tools">
+                        <!-- button with a dropdown -->
+                        <button type="button" class="btn btn-success btn-sm" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /. tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body no-padding">
+                    <!--The calendar -->
+                    <div id="calendar" style="width: 100%"></div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+        </section>
+        <!-- right col -->
+    </div>
+    <!-- /.row (main row) -->
+
+</section>
+
+@section Scripts {
+    <script>
+        $.ajax({
+            url: "/admin/Home/GetSaleNumber",
+            type: "GET",
+            dataType: "json",
+            beforeSend: function () {
+
+            },
+            success: function (obj) {
+                //Donut Chart
+                var sellQuantity = obj.sellQuantity;
+                var productInStock = obj.productInStock;
+                var donut = new Morris.Donut({
+                    element: 'sales-chart',
+                    resize: true,
+                    colors: ["#3c8dbc", "#f56954"],
+                    data: [
+                        { label: "Sold", value: sellQuantity },
+                        { label: "In Stock", value: productInStock }
+                    ],
+                    hideHover: 'auto'
+                });
+            },
+            error: function (error) {
+
+            },
+            complete: function () {
+
+            }
+        });
+
+        $.ajax({
+            url: "/admin/Home/GetRevenueOfMonth",
+            type: "GET",
+            dataType: "json",
+            beforeSend: function () {
+
+            },
+            success: function (data) {
+                $('#revenue-in-month').html('');
+                let row = `<div class="inner">
+                                    <h3>${data}<sup style="font-size: 20px">$</sup></h3>
+                                    <p>Revenue This Month</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>`;
+                $('#revenue-in-month').append(row);
+            },
+            error: function (error) {
+
+            },
+            complete: function () {
+
+            }
+        });
+
+    </script>
+}

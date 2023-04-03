@@ -3673,6 +3673,10 @@
       "PackagePath": "staticwebassets\\assets\\adminlte\\plugins\\timepicker\\bootstrap-timepicker.min.js"
     },
     {
+      "Id": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\css\\Biling.css",
+      "PackagePath": "staticwebassets\\assets\\css\\Biling.css"
+    },
+    {
       "Id": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\css\\forbidden.css",
       "PackagePath": "staticwebassets\\assets\\css\\forbidden.css"
     },
@@ -3683,6 +3687,10 @@
     {
       "Id": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\css\\style.css",
       "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\css\\thanks.css",
+      "PackagePath": "staticwebassets\\assets\\css\\thanks.css"
     },
     {
       "Id": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\fonts\\ElegantIcons.eot",
@@ -4195,6 +4203,10 @@
     {
       "Id": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\img\\account-image\\0c216c1b-b800-45b9-b23f-46260f541cf2people2.jfif",
       "PackagePath": "staticwebassets\\assets\\img\\account-image\\0c216c1b-b800-45b9-b23f-46260f541cf2people2.jfif"
+    },
+    {
+      "Id": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\img\\account-image\\330265c0-3e7a-46b3-923e-db03be3d070bphoto-1438761681033-6461ffad8d80.jfif",
+      "PackagePath": "staticwebassets\\assets\\img\\account-image\\330265c0-3e7a-46b3-923e-db03be3d070bphoto-1438761681033-6461ffad8d80.jfif"
     },
     {
       "Id": "D:\\visual studio - code\\.NET MVC\\BTL\\Nhom7_N03_TrangWebQuanCafe\\Nhom7_N03_TrangWebQuanCafe\\wwwroot\\assets\\img\\account-image\\4463a489-453b-40c6-a887-02103bae028ee98f2535036667.58bc6981515a3.jpg",

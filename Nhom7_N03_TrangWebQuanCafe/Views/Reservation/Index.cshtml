@@ -28,19 +28,17 @@
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-6 offset-lg-3">
             <div class="heading text-center mb-30">
-              <p class="heading__desc">You can book a table online easily in just a minute. Reservations are for lunch
-                and dinner, check the availability of your table & book it now!</p>
+              <p class="heading__desc">Book a table in just a minute!</p>
             </div><!-- /.heading -->
           </div><!-- /.col-lg-6 -->
         </div><!-- /.row -->
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-8 offset-lg-2">
-            <form>
               <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
-                    <select class="form-control">
-                      <option value="2">2 people</option>
+                    <select class="form-control" id="number-of-people">
+                      <option selected value="2">2 people</option>
                       <option value="3">3 people</option>
                       <option value="4">4 people</option>
                       <option value="5">5 people</option>
@@ -48,32 +46,24 @@
                       <option value="7">7 people</option>
                     </select>
                   </div>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-sm-4 col-md-4 col-lg-4">
+                </div><!-- /.col-lg-4 --> 
+                <div class="col-sm-6 col-md-6 col-lg-6">
                   <div class="form-group">
-                    <select class="form-control">
-                      <option value="23">March 23, 2020</option>
-                      <option value="24">March 24, 2020</option>
-                      <option value="25">March 25, 2020</option>
-                      <option value="26">March 26, 2020</option>
-                    </select>
-                  </div>
-                </div><!-- /.col-lg-4 -->
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <div class="form-group">
-                    <select class="form-control">
-                      <option value="8">8:00 PM</option>
-                      <option value="9">9:00 PM</option>
-                      <option value="10">10:00 PM</option>
-                      <option value="11">11:00 PM</option>
+                    <select class="form-control" id="book-time">
+                      <option value="8">8:00 AM - 10:00 AM</option>
+                      <option value="10">10:00 AM - 12:00 AM</option>
+                      <option value="12">12:00 AM - 02:00 PM</option>
+                      <option value="14">02:00 PM - 04:00 PM</option>
+                      <option value="16">04:00 PM - 06:00 PM</option>
+                      <option value="18">06:00 PM - 08:00 PM</option>
+                      <option value="20">08:00 PM - 10:00 PM</option>
                     </select>
                   </div>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-sm-12 col-md-12 col-lg-12">
-                  <button type="submit" class="btn btn__primary btn__block">Find A Table</button>
+                  <button onclick="findTable()" class="btn btn__primary btn__block">Find A Table</button>
                 </div><!-- /.col-lg-12 -->
               </div><!-- /.row -->
-            </form>
           </div><!-- /.col-lg-8 -->
         </div><!-- /.row -->
       </div><!-- /.container -->
@@ -100,3 +90,40 @@
         </div><!-- /.row -->
       </div><!-- /.container -->
     </section><!-- /.portfolio Gallery -->
+
+    @section Scripts{
+        <script>
+            function findTable() {
+                var accRole = "@ViewBag.accRole";
+                if (accRole != 6) {
+                    alert("You must login as a user to continue!");
+                }
+                else {
+                    var numberOfPeople = $('#number-of-people').find(":selected").val();
+                    var bookedTime = $('#book-time').find(":selected").val();
+                    $.ajax({
+                        url: "/reservation/FindTable?numberOfPeople=" + numberOfPeople + "&bookedTime=" + bookedTime,
+                        type: "GET",
+                        dataType: "json",
+                        beforeSend: function () {
+
+                        },
+                        success: function (data) {
+                            if (data.status == "success") {
+                                alert("Your table is booked successfully!");
+                            }
+                            else {
+                                alert("There are no tables available");
+                            }
+                        },
+                        error: function (error) {
+                            console.log("error");
+                        },
+                        complete: function () {
+
+                        }
+                    });
+                }
+            }
+        </script>
+    }

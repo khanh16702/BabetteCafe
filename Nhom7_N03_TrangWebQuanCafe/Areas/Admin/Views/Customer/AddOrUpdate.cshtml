@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Manage Customers";
+    string error = TempData["error"] as string;
+}
+
+@model Nhom7_N03_TrangWebQuanCafe.Models.Customer
+
+<h2 class="py-5">Update Customers</h2>
+@if (!string.IsNullOrEmpty(error))
+{
+    <p class="text-danger">@error</p>
+}
+<div class="row">
+    <div class="col-md-8">
+        <form action="/admin/customer/addorupdate?page=@ViewBag.page" method="post">
+            <input type="hidden" name="customerid" class="form-control" value="@Model.CustomerId">
+            <input type="hidden" name="createdby" class="form-control" id="productname" value="@Model.CreatedBy">
+            <input type="hidden" name="updatedby" class="form-control" id="productname" value="@Model.UpdatedBy">
+            <input type="hidden" name="updateddate" class="form-control" id="productname" value="@Model.UpdatedDate">
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" name="name" class="form-control" id="productname" value="@Model.Name" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Phone</label>
+                <div class="col-sm-10">
+                    <input type="text" name="phone" class="form-control" id="productname" value="@Model.Phone" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="productname" class="col-sm-2 col-form-label">Created Date</label>
+                <div class="col-sm-10">
+                    <input type="text" name="createddate" class="form-control" id="productname" value="@Model.CreatedDate" readonly>
+                </div>
+            </div>
+            <div class="form-group row" style="display:flex">
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning" href="/admin/customer/index?page=@ViewBag.page">Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

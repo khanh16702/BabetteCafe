@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Thank you!!";
+}
+@section Css {
+    <link rel="stylesheet" href="~/assets/css/thanks.css" type="text/css">
+}
+    <div class="content">
+        <div class="wrapper-1">
+            <div class="wrapper-2">
+                <h1>Thank you !</h1>
+                <p>Thank you for your order </p>
+                <p>it will be delivered soon </p>
+                <button onclick="gohome()" class="go-home">
+                    go home
+                </button>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+    <script>
+        function gohome() {
+            window.location.href = "/home/index";
+        }
+    </script>
+}

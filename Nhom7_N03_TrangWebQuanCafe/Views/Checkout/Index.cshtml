@@ -1,111 +1,124 @@
-﻿<section id="page-title" class="page-title page-title-layout7" style="background-color:black; height:110px">
-</section>
-<!-- Breadcrumb Section Begin -->
-<section>
+﻿@section Css {
+    <link rel="stylesheet" href="~/assets/css/Biling.css" type="text/css">
+}
+
+<section id="page-title" class="page-title page-title-layout6 text-center bg-overlay bg-overlay-2 bg-parallax">
+    <div class="bg-img"><img src="~/assets/images/backgrounds/14.jpg" alt="background"></div>
+    <svg class="pagetitle__divider-shape" xmlns="http://www.w3.org/2000/svg" width="22" height="61"
+         viewBox="0 0 22 61">
+        <path d="M799,769h2v61h-2V769Zm8,24.8a0.969,0.969,0,0,0-1.911,0,3.012,3.012,0,0,1-.883,2.16,4.486,4.486,0,0,0,0,6.136,3.083,3.083,0,0,1,0,4.32,4.486,4.486,0,0,0,0,6.136,3.088,3.088,0,0,1,0,4.325,4.5,4.5,0,0,0,0,6.142,3.014,3.014,0,0,1,.884,2.163,0.969,0.969,0,0,0,1.911,0,4.414,4.414,0,0,0-1.213-3.07,3.091,3.091,0,0,1,0-4.328,4.491,4.491,0,0,0,0-6.14,3.08,3.08,0,0,1,0-4.319,4.488,4.488,0,0,0,0-6.137,3.081,3.081,0,0,1,0-4.32A4.407,4.407,0,0,0,807,793.8Zm0-20a0.969,0.969,0,0,0-1.911,0,3.014,3.014,0,0,1-.883,2.16,4.486,4.486,0,0,0,0,6.136,3.083,3.083,0,0,1,0,4.32,4.488,4.488,0,0,0,0,6.137,3.087,3.087,0,0,1,0,4.324,4.5,4.5,0,0,0,0,6.142,3.014,3.014,0,0,1,.884,2.163,0.969,0.969,0,0,0,1.911,0,4.414,4.414,0,0,0-1.213-3.07,3.089,3.089,0,0,1,0-4.327,4.491,4.491,0,0,0,0-6.14,3.081,3.081,0,0,1,0-4.32,4.488,4.488,0,0,0,0-6.137,3.081,3.081,0,0,1,0-4.32A4.409,4.409,0,0,0,807,773.8ZM793,793.8a0.969,0.969,0,0,1,1.911,0,3.012,3.012,0,0,0,.883,2.16,4.486,4.486,0,0,1,0,6.136,3.083,3.083,0,0,0,0,4.32,4.486,4.486,0,0,1,0,6.136,3.088,3.088,0,0,0,0,4.325,4.5,4.5,0,0,1,0,6.142,3.014,3.014,0,0,0-.884,2.163,0.969,0.969,0,0,1-1.911,0,4.414,4.414,0,0,1,1.213-3.07,3.091,3.091,0,0,0,0-4.328,4.491,4.491,0,0,1,0-6.14,3.08,3.08,0,0,0,0-4.319,4.488,4.488,0,0,1,0-6.137,3.081,3.081,0,0,0,0-4.32A4.407,4.407,0,0,1,793,793.8Zm0-20a0.969,0.969,0,0,1,1.911,0,3.014,3.014,0,0,0,.883,2.16,4.486,4.486,0,0,1,0,6.136,3.083,3.083,0,0,0,0,4.32,4.488,4.488,0,0,1,0,6.137,3.087,3.087,0,0,0,0,4.324,4.5,4.5,0,0,1,0,6.142,3.014,3.014,0,0,0-.884,2.163,0.969,0.969,0,0,1-1.911,0,4.414,4.414,0,0,1,1.213-3.07,3.089,3.089,0,0,0,0-4.327,4.491,4.491,0,0,1,0-6.14,3.081,3.081,0,0,0,0-4.32,4.488,4.488,0,0,1,0-6.137,3.081,3.081,0,0,0,0-4.32A4.409,4.409,0,0,1,793,773.8Zm-4,5.2h2v41h-2V779Zm20,0h2v41h-2V779Z"
+              transform="translate(-789 -769)"></path>
+    </svg>
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <div >
-                    <h2>Checkout</h2>
-                    <div>
-                        <a href="/Home/Index">Home</a>
-                        <span>Checkout</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Breadcrumb Section End -->
-<!-- Checkout Section Begin -->
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h1 class="pagetitle__heading">Check Out</h1>
+            </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</section><!-- /.page-title -->
+
 <section class="checkout spad">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h6>
-                    <span class="icon_tag_alt"></span> Have a coupon? <a href="/products/shoppingcart">Click here</a> to enter your code
-                </h6>
-            </div>
-        </div>
         <div class="checkout__form">
             <h4>Billing Details</h4>
-            <form action="/Checkout/PlaceOrder" method="post">
+            <form action="#">
                 <div class="row">
                     <div class="col-lg-8 col-md-6">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="checkout__input">
-                                    <p>First Name<span>*</span></p>
-                                    <input type="text" name="firstname" required>
+                                    <p>Fist Name<span>*</span></p>
+                                    <input type="text">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Last Name<span>*</span></p>
-                                    <input type="text" name="lastname" required>
+                                    <input type="text">
                                 </div>
                             </div>
                         </div>
                         <div class="checkout__input">
                             <p>Country<span>*</span></p>
-                            <input type="text" name="country" required>
+                            <input type="text">
                         </div>
                         <div class="checkout__input">
                             <p>Address<span>*</span></p>
-                            <input type="text" class="checkout__input__add" name="address" required>
+                            <input type="text" class="checkout__input__add">
+                            <input type="text">
+                        </div>
+                        <div class="checkout__input">
+                            <p>Town/City<span>*</span></p>
+                            <input type="text">
+                        </div>
+                        <div class="checkout__input">
+                            <p>Country/State<span>*</span></p>
+                            <input type="text">
                         </div>
                         <div class="checkout__input">
                             <p>Postcode / ZIP<span>*</span></p>
-                            <input type="text" name="postcode" required>
+                            <input type="text">
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Phone<span>*</span></p>
-                                    <input type="text" name="phone" id="phone-number" required>
+                                    <input type="text">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Email<span>*</span></p>
-                                    <input type="email" name="email" required>
+                                    <input type="text">
                                 </div>
                             </div>
                         </div>
+                        <div class="checkout__input__checkbox">
+                            <label for="acc">
+                                Create an account?
+                                <input type="checkbox" id="acc">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <p>
+                            Create an account by entering the information below. If you are a returning customer
+                            please login at the top of the page
+                        </p>
                         <div class="checkout__input">
-                            <p>Order notes</p>
-                            <input type="text"
-                                   placeholder="Notes about your order, e.g. special notes for delivery." name="ordernotes">
+                            <p>Account Password<span>*</span></p>
+                            <input type="text">
+                        </div>
+                        <div class="checkout__input__checkbox">
+                            <label for="diff-acc">
+                                Ship to a different address?
+                                <input type="checkbox" id="diff-acc">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Order notes<span>*</span></p>
+                            <input type="text">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="checkout__order">
                             <h4>Your Order</h4>
                             <div class="checkout__order__products">Products <span>Total</span></div>
-                            <ul id="producs-in-cart">
+                            <ul>
+                                <li>Vegetable’s Package <span>$75.99</span></li>
+                                <li>Fresh Vegetable <span>$151.99</span></li>
+                                <li>Organic Bananas <span>$53.99</span></li>
                             </ul>
-                            <div id="total-price">
-                            </div>
+                            <div class="checkout__order__subtotal">Subtotal <span>$750.99</span></div>
+                            <div class="checkout__order__total">Total <span>$750.99</span></div>
                             <div class="checkout__input__checkbox">
-                                <label for="payment">
-                                    Check Payment
-                                    <input type="checkbox" id="payment">
-                                    <span class="checkmark"></span>
-                                </label>
+
+                                <button type="submit" class="site-btn">PLACE ORDER</button>
                             </div>
-                            <div class="checkout__input__checkbox">
-                                <label for="paypal">
-                                    Paypal
-                                    <input type="checkbox" id="paypal">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <button type="submit" class="site-btn">PLACE ORDER</button>
                         </div>
                     </div>
-                </div>
             </form>
         </div>
     </div>
 </section>
-<!-- Checkout Section End -->

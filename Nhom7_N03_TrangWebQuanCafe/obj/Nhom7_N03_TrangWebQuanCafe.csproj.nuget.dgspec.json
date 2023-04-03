@@ -69,9 +69,21 @@
               "target": "Package",
               "version": "[6.0.14, )"
             },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.13, )"
+            },
+            "Quartz": {
+              "target": "Package",
+              "version": "[3.6.2, )"
+            },
+            "Quartz.AspNetCore": {
+              "target": "Package",
+              "version": "[3.6.2, )"
             },
             "X.PagedList": {
               "target": "Package",

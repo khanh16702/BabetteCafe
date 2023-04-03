@@ -27,7 +27,7 @@ namespace Nhom7_N03_TrangWebQuanCafe.Controllers
                     .Where(x => x.Username == accClaim.Value)
                     .FirstOrDefault().AccountId;
                 var cartCount = _dbContext.Carts
-                    .Where(x => x.AccountId == accId)
+                    .Where(x => x.AccountId == accId && x.IsPlaced == false)
                     .ToList();
                 ViewBag.CartCount = cartCount.Count();
             }
@@ -60,7 +60,7 @@ namespace Nhom7_N03_TrangWebQuanCafe.Controllers
                         select x;
             }
 
-            query.OrderByDescending(x => x.CreatedDate).ToList();
+            query = from x in query orderby x.CreatedDate descending select x;
             List<NewsView> news = new List<NewsView>();
             foreach (var item in query)
             {

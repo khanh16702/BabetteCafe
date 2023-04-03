@@ -201,18 +201,7 @@ $(function () {
     });
 
     /*==========   Range Slider  ==========*/
-    var $rangeSlider = $("#rangeSlider"),
-        $rangeSliderResult = $("#rangeSliderResult");
-    $rangeSlider.slider({
-        range: true,
-        min: 0,
-        max: 300,
-        values: [50, 200],
-        slide: function (event, ui) {
-            $rangeSliderResult.val("$" + ui.values[0] + " - $" + ui.values[1]);
-        }
-    });
-    $rangeSliderResult.val("$" + $rangeSlider.slider("values", 0) + " - $" + $rangeSlider.slider("values", 1));
+    
 
     /*==========   lightbox PLugin  ==========*/
     lightbox.option({

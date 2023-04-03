@@ -277,3 +277,7 @@ D:\visual studio - code\.NET MVC\BTL\Nhom7_N03_TrangWebQuanCafe\Nhom7_N03_TrangW
 D:\visual studio - code\.NET MVC\BTL\Nhom7_N03_TrangWebQuanCafe\Nhom7_N03_TrangWebQuanCafe\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\visual studio - code\.NET MVC\BTL\Nhom7_N03_TrangWebQuanCafe\Nhom7_N03_TrangWebQuanCafe\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 D:\visual studio - code\.NET MVC\BTL\Nhom7_N03_TrangWebQuanCafe\Nhom7_N03_TrangWebQuanCafe\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+D:\visual studio - code\.NET MVC\BTL\Nhom7_N03_TrangWebQuanCafe\Nhom7_N03_TrangWebQuanCafe\bin\Debug\net6.0\Quartz.dll
+D:\visual studio - code\.NET MVC\BTL\Nhom7_N03_TrangWebQuanCafe\Nhom7_N03_TrangWebQuanCafe\bin\Debug\net6.0\Quartz.AspNetCore.dll
+D:\visual studio - code\.NET MVC\BTL\Nhom7_N03_TrangWebQuanCafe\Nhom7_N03_TrangWebQuanCafe\bin\Debug\net6.0\Quartz.Extensions.DependencyInjection.dll
+D:\visual studio - code\.NET MVC\BTL\Nhom7_N03_TrangWebQuanCafe\Nhom7_N03_TrangWebQuanCafe\bin\Debug\net6.0\Quartz.Extensions.Hosting.dll
