@@ -149,7 +149,7 @@ namespace Nhom7_N03_TrangWebQuanCafe.Controllers
                     writeDiscountCode.Add(item.y.x.a.DiscountCodeId);
                 }
                 var dcQuery = _dbContext.DiscountCodes.Where(x => x.DiscountCodeId == item.y.x.a.DiscountCodeId).FirstOrDefault();
-                total = (total - dcQuery.MinimumToApply) > 0 ? total - dcQuery.MinimumToApply : 0;
+                total = (total - dcQuery.DecreaseAmount) > 0 ? total - dcQuery.DecreaseAmount : 0;
             }
             return Json(new { objSubTotal = subtotal, objTotal = total });
         }
